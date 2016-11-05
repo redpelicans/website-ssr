@@ -1,3 +1,7 @@
+# specific
+dist
+build
+
 # Logs
 logs
 *.log
