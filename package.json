@@ -4,9 +4,9 @@
   "description": "Website of RedPelicans (in progress)",
   "main": "",
   "scripts": {
-    "pre-start": "cp public/index.html build/",
+    "pre-start": "mkdirp build/ && cp public/index.html build/",
     "start": "npm run pre-start && webpack-dev-server --config webpack-config-dev.js || true",
-    "pre-bundle": "cp public/index.html dist/",
+    "pre-bundle": "mkdirp dist/ && cp public/index.html dist/",
     "bundle": "npm run pre-bundle && webpack --config webpack-config-umd.js || true",
     "lint": "eslint src/client --color || true"
   },
@@ -23,6 +23,11 @@
   "webpack": {
     "name": "app",
     "vendor": "vendor",
+    "vendors": [
+      "react",
+      "react-dom",
+      "react-router"
+    ],
     "paths": {
       "src": "src/client",
       "build": "build",
@@ -55,17 +60,28 @@
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "mkdirp": "^0.5.1",
+    "postcss-loader": "^1.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-merge": "^0.15.0"
   },
   "babel": {
-    "presets": ["react", "es2015", "stage-0"],
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
     "plugins": [
       [
-        "import", [
-          { "libraryName": "lodash", "libraryDirectory": "", "camel2DashComponentName": false }
+        "import",
+        [
+          {
+            "libraryName": "lodash",
+            "libraryDirectory": "",
+            "camel2DashComponentName": false
+          }
         ]
       ]
     ]
