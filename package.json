@@ -1,0 +1,73 @@
+{
+  "name": "website-ssr",
+  "version": "1.0.0",
+  "description": "Website of RedPelicans (in progress)",
+  "main": "",
+  "scripts": {
+    "pre-start": "cp public/index.html build/",
+    "start": "npm run pre-start && webpack-dev-server --config webpack-config-dev.js || true",
+    "pre-bundle": "cp public/index.html dist/",
+    "bundle": "npm run pre-bundle && webpack --config webpack-config-umd.js || true",
+    "lint": "eslint src/client --color || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redpelicans/website-ssr.git"
+  },
+  "author": "RedPelicans",
+  "license": "RP",
+  "bugs": {
+    "url": "https://github.com/redpelicans/website-ssr/issues"
+  },
+  "homepage": "https://github.com/redpelicans/website-ssr#readme",
+  "webpack": {
+    "name": "app",
+    "vendor": "vendor",
+    "paths": {
+      "src": "src/client",
+      "build": "build",
+      "dist": "dist"
+    }
+  },
+  "engines": {
+    "node": "^5.7.1",
+    "npm": "^3.8.3"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-import": "^1.0.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.5.0",
+    "file-loader": "^0.9.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-merge": "^0.15.0"
+  },
+  "babel": {
+    "presets": ["react", "es2015", "stage-0"],
+    "plugins": [
+      [
+        "import", [
+          { "libraryName": "lodash", "libraryDirectory": "", "camel2DashComponentName": false }
+        ]
+      ]
+    ]
+  }
+}
