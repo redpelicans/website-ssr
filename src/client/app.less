@@ -1,0 +1,17 @@
+@import './assets/styles/colors';
+@import './assets/styles/fonts';
+
+body {
+  padding-top: 45px;
+  font-family: @amble-regular-font;
+  .app { animation: fadeInDown, 1s; }
+  a:hover, a:active, a:focus {
+    outline: none;
+    cursor: pointer;
+  }
+  .center-block { float: none; } /* Bootstrap patch */
+  ::selection {
+    color: @white;
+    background: @red;
+  }
+}

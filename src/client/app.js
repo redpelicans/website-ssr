@@ -2,10 +2,11 @@ import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
-import { HomeView, HeaderView, Footer } from './components';
+import { Home, HeaderView, Footer } from './components';
+import './app.less';
 
 const App = ({ children }) => (
-  <div className="AppView">
+  <div className="app">
     <HeaderView />
     {children}
     <Footer />
@@ -13,15 +14,15 @@ const App = ({ children }) => (
 );
 
 App.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
 };
 
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={HomeView} />
-      <Route path="home" component={HomeView} />
-      <Route path="*" component={HomeView} />
+      <IndexRoute component={Home} />
+      <Route path="home" component={Home} />
+      <Route path="*" component={Home} />
     </Route>
   </Router>
 ), window.document.getElementById('root'));

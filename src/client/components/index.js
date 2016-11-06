@@ -1,5 +1,5 @@
 import HeaderView from './header-view';
-import HomeView from './home-view';
+import Home from './home';
 import Footer from './footer';
 
-export { HomeView, HeaderView, Footer };
+export { Home, HeaderView, Footer };
