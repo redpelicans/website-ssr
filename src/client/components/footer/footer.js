@@ -8,7 +8,7 @@ const Footer = () => (
         <div className="container text-center">
           <p>
             <span>{ 'FOOTER.COPYRIGHT' }</span>
-            &nbsp;&nbsp;<span className="glyphicon glyphicon-send"></span>&nbsp;&nbsp;
+            &nbsp;&nbsp;<span className="glyphicon glyphicon-send" />&nbsp;&nbsp;
             <span>{ 'FOOTER.RIGHTS' }</span>
           </p>
         </div>
