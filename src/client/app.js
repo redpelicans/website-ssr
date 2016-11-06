@@ -2,14 +2,12 @@ import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Home, HeaderView, Footer } from './components';
+import { Home } from './components';
 import './app.less';
 
 const App = ({ children }) => (
   <div className="app">
-    <HeaderView />
     {children}
-    <Footer />
   </div>
 );
 
