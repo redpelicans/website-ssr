@@ -1,5 +1,6 @@
 @import '../../assets/styles/colors';
 @import '../../assets/styles/images';
+@import '../../assets/styles/hexagon';
 
 .footer {
   ::selection {
@@ -10,11 +11,29 @@
   background-color: @dark-grey;
   background-image: @pattern-dot-darker-grey;
 
-  border-top: 1px solid @darker-grey;
-
   p {
     span { color: @grey; }
     span.glyphicon { color: @darkest-grey; }
     margin: 14px 0;
+  }
+
+  img {
+    border: 1px solid @dark-grey;
+    margin: 35px 0;
+    padding: 0 30px;
+    // margin: 35px 30px 60px 30px;
+    max-height: 115px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  .separator-grey {
+    position: relative;
+    top: -12px;
+    span {
+      display: block;
+      .hexagon(20, @grey);
+    }
   }
 }
