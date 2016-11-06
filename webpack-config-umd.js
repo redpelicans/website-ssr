@@ -8,7 +8,7 @@ module.exports = merge(common, {
   //devtool: 'cheap-module-source-map',
   entry: {
     [config.webpack.name]: path.resolve(config.webpack.paths.src, config.webpack.name),
-    [config.webpack.vendor]: ['react', 'react-dom']
+    [config.webpack.vendor]: config.webpack.vendors
   },
   output: {
     path: config.webpack.paths.dist,
