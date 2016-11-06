@@ -1,12 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { HeaderView } from './modules';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { HomeView, HeaderView, Footer } from './components';
+import 'bootstrap/dist/css/bootstrap.css';
 
-const App = () => (
+const App = ({ children }) => (
   <div className="AppView">
     <HeaderView />
+    { children }
+    <Footer />
   </div>
 );
 
-
-render(<App />, document.getElementById('root'));
+render((
+  <Router history={ browserHistory }>
+    <Route path="/" component={ App }>
+      <IndexRoute component={ HomeView } />
+      <Route path="home" component={ HomeView }/>
+      <Route path="*" component={ HomeView }/>
+    </Route>
+  </Router>
+), document.getElementById('root'));
