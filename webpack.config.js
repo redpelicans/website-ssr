@@ -15,7 +15,7 @@ const webpackConfig = {
     publicPath: `/dist/`,
   },
   entry: {
-    app: './src/app.js',
+    app: './src/client/index.js',
     vendor: ['ramda', 'react', 'react-dom'],
   },
   module: {
@@ -27,9 +27,29 @@ const webpackConfig = {
         query: package.babel,
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        loader: 'url-loader?limit=100000'
+      }
     ],
   },
   postcss: () => autoprefixer({ browsers: ['last 2 versions'] }),

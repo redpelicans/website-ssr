@@ -1,19 +1,16 @@
+import 'ignore-styles';
 import http from 'http';
 import path from 'path';
 import url from 'url';
-import R from 'ramda';
 import express from 'express';
+import compression from 'compression';
 import ServerPage from './ssr';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import compression from 'compression';
 
 const PORT = 5555;
-const HOST = '172.22.0.2';
-
+const HOST = '0.0.0.0';
 const getUrl = (server) => `http://${server.address().address}:${server.address().port}`;
-const getParams = R.compose(R.fromPairs, R.map(R.split('=')), R.split('&'));
-
 const createServer = (cb) => {
   const app = express();
   const httpServer = http.createServer(app);
