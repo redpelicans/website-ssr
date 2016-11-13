@@ -7,6 +7,8 @@ const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="home" component={Home} />
+    <Route path="technologies" component={Home} />
+    <Route path="portfolio" component={Home} />
     <Route path="*" component={Home} />
   </Route>
 );

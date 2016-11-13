@@ -3,7 +3,7 @@ import fs from 'fs';
 import crypto from 'crypto';
 import React  from 'react';
 import { renderToString } from 'react-dom/server';
-import { Home } from '../client/components';
+import { Root } from '../client/containers/root';
 import { distPath } from '../../config';
 
 const md5 = (string) => crypto.createHash('md5').update(string).digest('hex');
@@ -15,7 +15,7 @@ const vendorJsUrl = getUrl('vendor', '.js');
 // const appCssUrl = getUrl('app', '.css');
 
 const ServerPage = () => {
-  const html = renderToString(<Home/>);
+  const html = renderToString(<Root store={store} routes={routes} history={history}/>);
   return (
     <html>
       <head>

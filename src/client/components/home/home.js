@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 import Splash from './splash';
@@ -10,9 +10,9 @@ import Hiring from './hiring';
 import Stack from './stack';
 import './home.less';
 
-const Home = ({location}) => (
+const Home = () => (
   <div className="home">
-    <Header location={location} />
+    <Header />
     <Splash />
     <Consulting1 />
     <Content />

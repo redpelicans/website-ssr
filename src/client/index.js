@@ -8,8 +8,15 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-const store = configureStore();
+const initialState = {
+  menu: {
+    isVisible: false,
+  },
+};
+
+const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store);
+history.listen((location) => console.log(location));
 
 const root = (
   <Root
