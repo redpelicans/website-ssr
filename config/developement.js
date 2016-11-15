@@ -15,7 +15,7 @@ module.exports = {
     //     target: 'http://0.0.0.0:5555 ',
     //     secure: false,
     //     bypass: function(req, res, proxyOptions) {
-    //       if (req.url === '/client') return '/dist/index.html';
+    //       if (req.url === '/client') return '/public/index.html';
     //     },
     //   }
     // }

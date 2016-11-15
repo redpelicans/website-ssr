@@ -1,28 +1,24 @@
 import 'ignore-styles';
 import http from 'http';
-import path from 'path';
-import url from 'url';
 import express from 'express';
 import compression from 'compression';
-import ServerPage from './ssr';
+import renderIndexPage from './ssr';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { server, public as publicConfig } from '../../config';
 
-const PORT = 5555;
-const HOST = '0.0.0.0';
+const { host, port } = server;
+const { path } = publicConfig;
 const getUrl = (server) => `http://${server.address().address}:${server.address().port}`;
 const createServer = (cb) => {
   const app = express();
   const httpServer = http.createServer(app);
 
   app.use(compression());
-  app.use('/dist', express.static(path.join(__dirname, '../dist')));
-  app.use(function(req, res, next){ 
-    const html = renderToString(<ServerPage/>);
-    res.send(html) 
-  });
+  app.use('/public', express.static(path));
+  app.use(renderIndexPage);
 
-  httpServer.listen(PORT, HOST, () => {
+  httpServer.listen(port, host, () => {
     httpServer.url = getUrl(httpServer);
     cb && cb(null, httpServer);
   });

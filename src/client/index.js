@@ -8,12 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-const initialState = {
-  menu: {
-    isVisible: false,
-  },
-};
-
+const initialState = window.__PRELOADED_STATE__;
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store);
 history.listen((location) => console.log(location));

@@ -9,7 +9,7 @@ const configureStore = (initialState) => createStore(
   initialState,
   compose(
     applyMiddleware(createLogger()),
-    window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
+    typeof(window) !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
   )
 );
 

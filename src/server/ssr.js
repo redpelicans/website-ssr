@@ -1,34 +1,62 @@
-import { join } from 'path';
-import fs from 'fs';
-import crypto from 'crypto';
 import React  from 'react';
 import { renderToString } from 'react-dom/server';
-import { Root } from '../client/containers/root';
-import { distPath } from '../../config';
+import { getHashedUrl } from './util';
+import { RouterContext, match } from 'react-router';
+import routes  from '../client/routes';
+import { Provider } from 'react-redux';
+import { App } from '../client/containers'
+import { createStore, combineReducers } from 'redux';
+import { currentPage, menu } from '../client/reducers';
 
-const md5 = (string) => crypto.createHash('md5').update(string).digest('hex');
-const getFile = (path, name, ext='') => fs.readFileSync(join(path, name + ext));
-const getUrl = (name, ext) => `/dist/${name}${ext}?${md5(getFile(distPath, name, ext))}`;
+const appJsUrl = getHashedUrl('app', '.js');
+const vendorJsUrl = getHashedUrl('vendor', '.js');
+const appCssUrl = getHashedUrl('styles', '.css');
 
-const appJsUrl = getUrl('app', '.js');
-const vendorJsUrl = getUrl('vendor', '.js');
-// const appCssUrl = getUrl('app', '.css');
+const indexHtml = ({ appCssUrl, html, vendorJsUrl, appJsUrl, preloadedState }) => `
+  <html>
+    <head> 
+      <link rel="stylesheet" type="text/css" href="${appCssUrl}"/>
+    </head>
+    <body>
+      <div id='__APP__'>${html}</div>
+      <script>
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)};
+      </script>
+      <script src='${vendorJsUrl}'></script>
+      <script src='${appJsUrl}'></script>
+    </body>
+  </html>
+`;
 
-const ServerPage = () => {
-  const html = renderToString(<Root store={store} routes={routes} history={history}/>);
-  return (
-    <html>
-      <head>
-        {/* <link rel='stylesheet' href={appCssUrl} type='text/css'/> */}
-      </head>
-      <body>
-        <div id='_APP__' dangerouslySetInnerHTML={{ __html: html }}></div>
-        <script src={vendorJsUrl}></script>
-        <script src={appJsUrl}></script>
-      </body>
-    </html>
-  );
+const initialState = {
+  menu: {
+    isVisible: false,
+  },
+};
+
+const configureStore = (initialState) => createStore(
+  combineReducers({ menu, currentPage }),
+  initialState
+);
+
+const renderIndexPage = (req, res) => {
+  console.log(req.path.toString());
+  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    if (redirectLocation) {
+      res.redirect(301, redirectLocation.pathname + redirectLocation.search)
+    } else if (error) {
+      res.send(500, error.message)
+    } else if (renderProps == null) {
+      res.send(404, 'Not found')
+    } else {
+      const store = configureStore(initialState);
+      const Root = <Provider store={store}><RouterContext {...renderProps}/></Provider>;
+      const html = renderToString(Root);
+      const preloadedState = store.getState();
+      res.send(indexHtml({ appCssUrl, html, vendorJsUrl, appJsUrl, preloadedState }));
+    }
+  });
 }
 
-export default ServerPage;
+export default renderIndexPage;
 

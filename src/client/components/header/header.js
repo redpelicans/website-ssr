@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../../actions';
+import { Breadcrumbs } from '../../components';
 import './header.less';
 
 const Header = ({ isMenuVisible, currentPage, toggleMenu }) => (
@@ -15,7 +16,7 @@ const Header = ({ isMenuVisible, currentPage, toggleMenu }) => (
       </div>
     </div>
     <div className="hidden-xs breadcrumbs">
-      { currentPage }
+      <Breadcrumbs/>
     </div>
     <div className={`toggle ${isMenuVisible ? 'active' : ''}`}>
       <a onClick={toggleMenu}>
@@ -72,7 +73,7 @@ Header.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
   return {
     currentPage: state.currentPage.name,
     isMenuVisible: state.menu.isVisible,

@@ -5,11 +5,11 @@ import { App } from './containers';
 
 const routes = (
   <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="home" component={Home} />
-    <Route path="technologies" component={Home} />
-    <Route path="portfolio" component={Home} />
-    <Route path="*" component={Home} />
+    <IndexRoute  component={Home} />
+    <Route name='home' path='home' component={Home} />
+    <Route name='technologies' path='technologies' component={Home} />
+    <Route name='portfolio' path='portfolio' component={Home} />
+    <Route name='home' path="*" component={Home} />
   </Route>
 );
 

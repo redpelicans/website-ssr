@@ -11,8 +11,8 @@ const webpackConfig = {
   target: 'web',
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, '/dist'),
-    publicPath: `/dist/`,
+    path: path.join(__dirname, '/public'),
+    publicPath: `/public/`,
   },
   entry: {
     app: './src/client/index.js',
@@ -27,12 +27,13 @@ const webpackConfig = {
         query: package.babel,
       },
       {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!postcss-loader!less-loader'
+        test: /\.css/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       },
+
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader'
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
       },
       {
         test: /\.json$/,
@@ -54,7 +55,7 @@ const webpackConfig = {
   },
   postcss: () => autoprefixer({ browsers: ['last 2 versions'] }),
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('styles.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
