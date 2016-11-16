@@ -6,7 +6,7 @@ Website of RedPelicans (in progress)
 
 A now well known incantation:
 
-``` javascript
+``` 
   $ npm i
 ```
 
@@ -16,8 +16,6 @@ The first target of the project is to render pages server side. So we have to de
 
 ## Client side only
 
-client dev mode:
-
 ```
   $ npm run client-dev
   http://0.0.0.0:3000/
@@ -26,6 +24,6 @@ client dev mode:
 ```
 
 Launch yor browser to `http://0.0.0.0:3000/public/index.html` and code your
-client. `index.html` is a static file from `/public` folder.
+client, hot reload is enable. `index.html` is a static file from `/public` folder. 
 
 
