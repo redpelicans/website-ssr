@@ -20,10 +20,19 @@ The first target of the project is to render pages server side. So we have to de
   $ npm run client-dev
   http://0.0.0.0:3000/
   webpack result is served from /dist/
-
+  content is served from ./public
 ```
 
-Launch yor browser to `http://0.0.0.0:3000/index.html` and code your
-client, hot reload is enable. `index.html` is a static file from `/dist` folder. 
+Launch yor browser to `http://0.0.0.0:3000` and code your
+client, hot reload is enable. `index.html` is a static file served from `./public` folder. 
 
 
+## Full sides
+
+We need to rebuild webpack contents and write them to `./dist` each time clint code is modified and rerun server each time server code is ..., so run 2 commands in 2 seprated shells:
+
+```
+  $ npm run bundle-dev
+  $ npm run server-dev
+ 
+```
