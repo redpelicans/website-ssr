@@ -11,8 +11,8 @@ const webpackConfig = {
   target: 'web',
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, '/public'),
-    publicPath: `/public/`,
+    path: path.join(__dirname, '/dist'),
+    publicPath: `/dist/`,
   },
   entry: {
     app: './src/client/index.js',

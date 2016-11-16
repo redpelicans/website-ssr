@@ -4,8 +4,9 @@
   "description": "Website of RedPelicans (in progress)",
   "main": "",
   "scripts": {
-    "bundle": "webpack -p --config webpack.config.js --progress",
-    "client-dev": "NODE_ENV=developement webpack-dev-server --config webpack.config.js",
+    "bundle-prod": "webpack -p --config webpack.config.js --progress",
+    "bundle-dev": "webpack --watch --config webpack.config.js --progress",
+    "client-dev": "NODE_ENV=developement webpack-dev-server --progress --config webpack.config.js",
     "bundle-stats": "webpack --config webpack.config.js --profile --json > stats.json",
     "bundle-analyse": "webpack-bundle-analyzer ./stats.json  --report --mode=static",
     "server-dev": "babel-watch -w ./src src/server/main.js",
