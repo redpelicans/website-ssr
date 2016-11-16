@@ -1,27 +1,36 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
+import { getBreadcrumbs } from '../util';
 import './app.less';
 
-const App = ({ children }) => (
-  <div className="app">
-    {children}
-  </div>
-);
+class App extends Component {
+  getChildContext() {
+    const { breadcrumbs } = this.props;
+    return { breadcrumbs };
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+      <div className="app">
+        {children}
+      </div>
+    );
+  }
+}
+
+App.childContextTypes = {
+  breadcrumbs: PropTypes.string,
+};
 
 App.propTypes = {
   children: PropTypes.object,
+  breadcrumbs: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state, props) => {
-  console.log('======================== APP')
-  console.log(props)
-  return {}
-  return {
-    currentPage: state.currentPage.name,
-    isMenuVisible: state.menu.isVisible,
-  };
-};
-
+const mapStateToProps = (state, { children, routes }) => ({ 
+  children,
+  breadcrumbs: getBreadcrumbs(routes),
+});
 
 export default connect(mapStateToProps)(App);
-// export default App;

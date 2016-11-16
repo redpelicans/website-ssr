@@ -6,7 +6,7 @@ import routes  from '../client/routes';
 import { Provider } from 'react-redux';
 import { App } from '../client/containers'
 import { createStore, combineReducers } from 'redux';
-import { currentPage, menu } from '../client/reducers';
+import { menu } from '../client/reducers';
 
 const appJsUrl = getHashedUrl('app', '.js');
 const vendorJsUrl = getHashedUrl('vendor', '.js');
@@ -35,12 +35,11 @@ const initialState = {
 };
 
 const configureStore = (initialState) => createStore(
-  combineReducers({ menu, currentPage }),
+  combineReducers({ menu }),
   initialState
 );
 
 const renderIndexPage = (req, res) => {
-  console.log(req.path.toString());
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (redirectLocation) {
       res.redirect(301, redirectLocation.pathname + redirectLocation.search)

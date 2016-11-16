@@ -1,6 +1,7 @@
 # specific
 dist
 build
+public
 
 # Logs
 logs

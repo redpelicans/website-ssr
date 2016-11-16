@@ -4,7 +4,7 @@ import { Home } from './components';
 import { App } from './containers';
 
 const routes = (
-  <Route path="/" component={App}>
+  <Route name='home' path="/" component={App}>
     <IndexRoute  component={Home} />
     <Route name='home' path='home' component={Home} />
     <Route name='technologies' path='technologies' component={Home} />
