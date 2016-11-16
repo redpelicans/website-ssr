@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
 import { TOGGLE_MENU, LOCATION_CHANGE } from '../actions';
 
-export const menu = (state = {}, action) => {
+export const menu = (state = { isVisible: false }, action) => {
   switch(action.type) {
     case TOGGLE_MENU:
       return {
@@ -14,10 +13,6 @@ export const menu = (state = {}, action) => {
   };
 };
 
-const rootReducer = combineReducers({
-  routing: routerReducer,
-  menu,
-});
-
+const rootReducer = combineReducers({ menu });
 export default rootReducer;
 

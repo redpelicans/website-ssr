@@ -5,7 +5,7 @@ import compression from 'compression';
 import renderIndexPage from './ssr';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { server, public as publicConfig } from '../../config';
+import { compress, server, public as publicConfig, dist as distConfig } from '../../config';
 
 const { host, port } = server;
 const { path } = publicConfig;
@@ -14,8 +14,9 @@ const createServer = (cb) => {
   const app = express();
   const httpServer = http.createServer(app);
 
-  app.use(compression());
-  app.use('/public', express.static(path));
+  compress && app.use(compression());
+  app.use('/public', express.static(publicConfig.path));
+  app.use('/dist', express.static(distConfig.path));
   app.use(renderIndexPage);
 
   httpServer.listen(port, host, () => {
