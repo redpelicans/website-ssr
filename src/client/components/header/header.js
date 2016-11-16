@@ -8,8 +8,6 @@ class Header extends Component {
   render() {
     const { isMenuVisible, toggleMenu } = this.props;
     const { breadcrumbs } = this.context;
-    console.log('============ breadcrumbs')
-    console.log(breadcrumbs)
     return (
       <div className="header">
         <div className="nav">
@@ -73,7 +71,7 @@ class Header extends Component {
     );
   }
 }
-Header.childContextTypes = {
+Header.contextTypes = {
   breadcrumbs: PropTypes.string,
 };
       

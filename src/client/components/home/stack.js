@@ -1,5 +1,4 @@
 import React from 'react';
-import dockerThumb from '../../assets/images/docker-thumb.png';
 import mongodbThumb from '../../assets/images/mongodb-thumb.png';
 import nodejsThumb from '../../assets/images/nodejs-thumb.png';
 import angularjsThumb from '../../assets/images/angularjs-thumb.png';
@@ -18,7 +17,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="https://www.docker.com/">
-              <img src={dockerThumb} />
+              <div className='image dockerThumb' />
               <span>Docker</span>
             </a>
           </div>
@@ -26,7 +25,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="https://www.mongodb.org/">
-              <img src={mongodbThumb} />
+              <div className='image mongodbThumb' />
               <span>MongoDB</span>
             </a>
           </div>
@@ -34,7 +33,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="https://nodejs.org/">
-              <img src={nodejsThumb} />
+              <div className='image nodejsThumb' />
               <span>Node.js</span>
             </a>
           </div>
@@ -42,7 +41,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="https://angularjs.org/">
-              <img src={angularjsThumb} />
+              <div className='image angularjsThumb' />
               <span>AngularJS</span>
             </a>
           </div>
@@ -50,7 +49,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="http://facebook.github.io/react/">
-              <img src={reactThumb} />
+              <div className='image reactThumb' />
               <span>React</span>
             </a>
           </div>
@@ -58,7 +57,7 @@ const Stack = () => (
         <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <div className="wrapper">
             <a href="http://aurelia.io/">
-              <img src={aureliaThumb} />
+              <div className='image aureliaThumb' />
               <span>Aurelia</span>
             </a>
           </div>

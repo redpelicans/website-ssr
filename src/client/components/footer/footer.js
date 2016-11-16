@@ -1,6 +1,5 @@
 import React from 'react';
 import './footer.less';
-import mongoPartner from '../../assets/images/mongo-partner.png';
 
 const Footer = () => (
   <div className="footer">
@@ -14,7 +13,7 @@ const Footer = () => (
       </div>
       <div className="row">
         <div className="container text-center">
-          <img src={mongoPartner} />
+          <div className="image mongoPartner" />
         </div>
       </div>
       <div className="row">
