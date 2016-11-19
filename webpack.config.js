@@ -5,6 +5,8 @@ const package = require('./package.json');
 const config = require('./config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const getPostcssPlugins = () => [ autoprefixer({ browsers : ['last 2 versions'] }) ];
+
 const webpackConfig = {
   devtool: config.devtool,
   devServer: config.devServer,
@@ -28,12 +30,31 @@ const webpackConfig = {
       },
       {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [ 
+            'css-loader', 
+            { 
+              loader: 'postcss-loader',
+              options: getPostcssPlugins()
+            }
+          ]
+        })
       },
 
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [ 
+            'css-loader', 
+            {
+              loader: 'postcss-loader', 
+              options: getPostcssPlugins(),
+            },
+            'less-loader',
+          ],
+        })
       },
       {
         test: /\.json$/,
@@ -41,7 +62,11 @@ const webpackConfig = {
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          type: 'application/font-woff'
+        }
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -49,11 +74,13 @@ const webpackConfig = {
       },
       {
         test: /\.(gif|png|jpe?g)$/,
-        loader: 'url-loader?limit=100000'
+        loader: 'url-loader',
+        query: {
+          limit: 100000
+        }
       }
     ],
   },
-  postcss: () => autoprefixer({ browsers: ['last 2 versions'] }),
   plugins: [
     new ExtractTextPlugin('styles.css'),
     new webpack.DefinePlugin({

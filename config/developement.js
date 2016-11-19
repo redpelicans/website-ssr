@@ -6,7 +6,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     inline: true,
-    progress: true,
+    // progress: true,
     stats: 'errors-only',
     host: '0.0.0.0',
     port: 3000,
