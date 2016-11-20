@@ -5,7 +5,6 @@ import rootReducer from '../reducers';
 
 const configureStore = (initialState) => createStore(
   rootReducer,
-  initialState,
-  compose( applyMiddleware(createLogger()))
+  initialState
 );
 export default configureStore;

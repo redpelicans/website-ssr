@@ -1,21 +1,22 @@
 import React  from 'react';
 import { renderToString } from 'react-dom/server';
-import { getHashedUrl } from './util';
+import { getFile, getHashedUrl } from './util';
 import { RouterContext, match } from 'react-router';
 import routes  from '../client/routes';
 import { Provider } from 'react-redux';
 import { App } from '../client/containers'
 import { createStore, combineReducers } from 'redux';
 import { menu } from '../client/reducers';
+import { dist as distConfig } from '../../config';
 
 const appJsUrl = getHashedUrl('app', '.js');
 const vendorJsUrl = getHashedUrl('vendor', '.js');
-const appCssUrl = getHashedUrl('styles', '.css');
+const appCss = getFile(distConfig.path, 'styles', '.css');
 
-const indexHtml = ({ appCssUrl, html, vendorJsUrl, appJsUrl, preloadedState }) => `
+const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState }) => `
   <html>
     <head> 
-      <link rel="stylesheet" type="text/css" href="${appCssUrl}"/>
+      <style type="text/css"> ${appCss} </style>
     </head>
     <body>
       <div id='__APP__'>${html}</div>
@@ -52,7 +53,7 @@ const renderIndexPage = (req, res) => {
       const Root = <Provider store={store}><RouterContext {...renderProps}/></Provider>;
       const html = renderToString(Root);
       const preloadedState = store.getState();
-      res.send(indexHtml({ appCssUrl, html, vendorJsUrl, appJsUrl, preloadedState }));
+      res.send(indexHtml({ appCss, html, vendorJsUrl, appJsUrl, preloadedState }));
     }
   });
 }

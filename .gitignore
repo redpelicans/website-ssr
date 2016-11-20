@@ -1,6 +1,7 @@
 # specific
 dist
 build
+yarn.lock
 
 # Logs
 logs

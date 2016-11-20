@@ -9,7 +9,7 @@ const getPostcssPlugins = () => [ autoprefixer({ browsers : ['last 2 versions'] 
 
 const webpackConfig = {
   devtool: config.devtool,
-  devServer: config.devServer,
+  devServer: config.devServer || {},
   target: 'web',
   output: {
     filename: '[name].js',
@@ -18,7 +18,7 @@ const webpackConfig = {
   },
   entry: {
     app: './src/client/index.js',
-    vendor: ['ramda', 'react', 'react-dom'],
+    vendor: ['ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
   },
   module: {
     loaders: [
