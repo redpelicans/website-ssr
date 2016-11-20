@@ -23,10 +23,14 @@ const webpackConfig = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         loader: 'babel-loader',
-        exclude: path.resolve('./node_modules'),
+        exclude: /node_modules/,
         query: package.babel,
+        query: {
+          // to be checked
+          cacheDirectory: true,
+        }
       },
       {
         test: /\.css/,
