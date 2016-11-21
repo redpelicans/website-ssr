@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "bundle-prod": "NODE_ENV=production webpack -p --config webpack.config.js --progress",
-    "bundle-dev": "NODE_ENV=developement webpack --watch --config webpack.config.js --progress",
+    "bundle-dev": "NODE_ENV=developement webpack-dev-server --watch --config webpack.config.js --progress",
     "client-dev": "NODE_ENV=developement webpack-dev-server --progress --config webpack.config.js",
     "bundle-stats": "webpack --config webpack.config.js --profile --json > stats.json",
     "bundle-analyse": "webpack-bundle-analyzer ./stats.json  --report --mode=static",
@@ -80,7 +80,7 @@
   "babel": {
     "presets": [
       "stage-0",
-      "latest",
+      ["latest", { "modules": false }],
       "react"
     ],
     "plugins": []
