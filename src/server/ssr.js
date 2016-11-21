@@ -7,13 +7,13 @@ import { Provider } from 'react-redux';
 import { App } from '../client/containers'
 import { createStore, combineReducers } from 'redux';
 import { menu } from '../client/reducers';
-import { dist as distConfig } from '../../config';
+import { justSSR, dist as distConfig } from '../../config';
 
 const appJsUrl = getHashedUrl('app', '.js');
 const vendorJsUrl = getHashedUrl('vendor', '.js');
 const appCss = getFile(distConfig.path, 'styles', '.css');
 
-const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState }) => `
+const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState, justSSR }) => `
   <html>
     <head> 
       <style type="text/css"> ${appCss} </style>
@@ -24,7 +24,7 @@ const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState }) => `
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)};
       </script>
       <script src='${vendorJsUrl}'></script>
-      <script src='${appJsUrl}'></script>
+      <script src='${justSSR ? '' : appJsUrl}'></script>
     </body>
   </html>
 `;
@@ -53,7 +53,7 @@ const renderIndexPage = (req, res) => {
       const Root = <Provider store={store}><RouterContext {...renderProps}/></Provider>;
       const html = renderToString(Root);
       const preloadedState = store.getState();
-      res.send(indexHtml({ appCss, html, vendorJsUrl, appJsUrl, preloadedState }));
+      res.send(indexHtml({ justSSR, appCss, html, vendorJsUrl, appJsUrl, preloadedState }));
     }
   });
 }
