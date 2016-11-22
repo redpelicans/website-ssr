@@ -1,5 +1,4 @@
 module.exports = {
-  hotReload: true,
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './public',

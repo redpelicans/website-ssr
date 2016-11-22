@@ -1,4 +1,5 @@
 const path = require('path');
+const R = require('ramda');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const package = require('./package.json');
@@ -6,6 +7,11 @@ const config = require('./config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const getPostcssPlugins = () => [ autoprefixer({ browsers : ['last 2 versions'] }) ];
+const isProd = () => 'production' === JSON.stringify(process.env.NODE_ENV);
+const isDev = () => 'development' === JSON.stringify(process.env.NODE_ENV);
+const ifProd = (plugin) => isProd() ? plugin : null;
+const ifDev = (plugin) => isDev() ? plugin : null;
+const compact = R.filter((x) => !R.isNil(x));
 
 const webpackConfig = {
   devtool: config.devtool,
@@ -18,7 +24,7 @@ const webpackConfig = {
   },
   entry: {
     app: './src/client/index.js',
-    vendor: ['ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
+    vendor: ['lodash', 'ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
   },
   module: {
     loaders: [
@@ -85,14 +91,21 @@ const webpackConfig = {
       }
     ],
   },
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
+  plugins: compact([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-  ],
+    //ifProd(new webpack.optimize.DedupePlugin()),
+    ifDev(new webpack.HotModuleReplacementPlugin()),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      // minChunks: Infinity,
+      //filename: '[name].[hash].js',
+    }),
+    new ExtractTextPlugin('styles.css'),
+  ]),
   stats: {
     assets: true,
     colors: true,
@@ -104,10 +117,6 @@ const webpackConfig = {
     children: false,
   },
 };
-
-if (config.hotReload) {
-  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-}
 
 module.exports = webpackConfig;
 
