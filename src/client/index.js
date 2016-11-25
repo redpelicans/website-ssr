@@ -1,21 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import routes from './routes';
+import routes from '../routes';
 import configureStore from './store/configureStore';
-import { Root } from './containers';
-import { browserHistory as history} from 'react-router';
+import { browserHistory as history, match, Router } from 'react-router';
+import { Provider } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
 const initialState = window.__PRELOADED_STATE__;
 const store = configureStore(initialState);
-
-const root = (
-  <Root
-    store={store}
-    routes={routes}
-    history={history}
-  />
-);
-
-render(root, window.document.getElementById('__APP__'));
+const mountNode = window.document.getElementById('__APP__');
+match({ history, routes }, (error, redirectLocation, renderProps) => {
+  const root = <Provider store={store}><Router {...renderProps}/></Provider>;
+  render(root, mountNode);
+})

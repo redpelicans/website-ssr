@@ -2,7 +2,7 @@ import React  from 'react';
 import { renderToString } from 'react-dom/server';
 import { getFile, getHashedUrl } from './util';
 import { RouterContext, match } from 'react-router';
-import routes  from '../client/routes';
+import routes  from '../routes';
 import { Provider } from 'react-redux';
 import { App } from '../client/containers'
 import { createStore, combineReducers } from 'redux';

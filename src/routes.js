@@ -1,4 +1,4 @@
-import { App } from './containers';
+import { App } from './client/containers';
 
 if (typeof System === 'undefined') {
   console.log('polyfill System.import');
@@ -18,7 +18,7 @@ const routes = ({
   name: 'Home', 
   indexRoute: {
     getComponent(location, cb) {
-      System.import('./components/home').then(loadRoute(cb)).catch(errorLoading);
+      System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
     }
   },
   childRoutes: [
@@ -26,28 +26,28 @@ const routes = ({
       path: 'home',
       name: 'Home',
       getComponent(location, cb) {
-        System.import('./components/home').then(loadRoute(cb)).catch(errorLoading);
+        System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
       }
     },
     {
       path: 'technologies',
       name: 'Technologies',
       getComponent(location, cb) {
-        System.import('./components/technologies').then(loadRoute(cb)).catch(errorLoading);
+        System.import('./client/components/technologies').then(loadRoute(cb)).catch(errorLoading);
       }
     },
     {
       path: 'portfolio',
       name: 'Portfolio',
       getComponent(location, cb) {
-        System.import('./components/portfolio').then(loadRoute(cb)).catch(errorLoading);
+        System.import('./client/components/portfolio').then(loadRoute(cb)).catch(errorLoading);
       }
     },
     {
       path: '*',
       name: 'Home',
       getComponent(location, cb) {
-        System.import('./components/home').then(loadRoute(cb)).catch(errorLoading);
+        System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
       }
     }
   ],
