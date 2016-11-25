@@ -5,7 +5,7 @@ import compression from 'compression';
 import renderIndexPage from './ssr';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { compress, server, public as publicConfig, dist as distConfig } from '../../config';
+import { justSSR, compress, server, public as publicConfig, dist as distConfig } from '../../config';
 
 const { host, port } = server;
 const { path } = publicConfig;
@@ -13,6 +13,8 @@ const getUrl = (server) => `http://${server.address().address}:${server.address(
 const createServer = (cb) => {
   const app = express();
   const httpServer = http.createServer(app);
+
+  console.warn('Warning, you are running server in SSR exclusive mode');
 
   compress && app.use(compression());
   app.use('/public', express.static(publicConfig.path));

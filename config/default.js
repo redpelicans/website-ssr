@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  justSSR: false,
   compress: false,
   public: {
     path: path.join(__dirname, '../public'),

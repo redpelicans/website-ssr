@@ -104,7 +104,10 @@ const webpackConfig = {
       // minChunks: Infinity,
       //filename: '[name].[hash].js',
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      allChunks: true,
+    }),
   ]),
   stats: {
     assets: true,
