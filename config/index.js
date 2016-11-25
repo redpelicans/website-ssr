@@ -1,7 +1,7 @@
 const R = require('ramda');
 const defaultConfig = require('./default');
 const supportedModes = { 
-  developement: require('./developement'), 
+  development: require('./development'), 
   production: require('./production'), 
   testing: require('./testing') 
 };
