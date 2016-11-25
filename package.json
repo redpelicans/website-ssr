@@ -9,7 +9,7 @@
     "client-dev": "NODE_ENV=development webpack-dev-server --progress --config webpack.config.js",
     "bundle-stats": "NODE_ENV=production webpack -p --config webpack.config.js --profile --json > stats.json",
     "bundle-analyse": "webpack-bundle-analyzer ./stats.json  --report --mode=static",
-    "server-dev": "NODE_ENV=development babel-watch -w ./src -w ./dist src/server/main.js",
+    "server-dev": "NODE_ENV=development babel-watch -w ./config -w ./src -w ./dist src/server/main.js",
     "server-prod": "NODE_ENV=production babel-node  src/server/main.js",
     "lint": "eslint src/client --color"
   },
