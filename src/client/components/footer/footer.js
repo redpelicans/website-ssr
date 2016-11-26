@@ -12,7 +12,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="row">
-        <div className="container text-center">
+        <div className="container partners">
           <div className="image mongoPartner" />
         </div>
       </div>
