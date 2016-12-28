@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../header';
 import Footer from '../footer';
+import Contact from '../contact';
 import Splash from './splash';
 import Datavisualization from './datavisualization';
 import Frontend from './frontend';
 import Backend from './backend';
 import Nosql from './nosql';
-import Contact from './contact';
 import './technologies.less';
 
 const Technologies = () => (
