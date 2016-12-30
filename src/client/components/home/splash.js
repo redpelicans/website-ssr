@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const Splash = () => (
   <div className="splash">
@@ -12,7 +13,12 @@ const Splash = () => (
       </div>
       <div className="row">
         <div className="col-lg-12 col-xs-12">
-          <h2 className="text-center">{ 'HOME.SPLASH.CATCH' }</h2>
+          <h2 className="text-center">
+            <FormattedMessage
+              id="home.splash.catch"
+              defaultMessage="The Full Stack Javascript Company"
+            />
+          </h2>
         </div>
       </div>
       <div className="row">
