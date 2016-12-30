@@ -10,10 +10,12 @@ import fr from 'react-intl/locale-data/fr';
 import localeData from '../../i18n/data.json';
 
 addLocaleData([...en, ...fr]);
-
+/*
 const language = (
   (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage
 );
+*/
+const language = 'en';
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 const messages = localeData[languageWithoutRegionCode] || localeData[language] || localeData.en;
 

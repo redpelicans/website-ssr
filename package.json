@@ -6,6 +6,7 @@
   "scripts": {
     "bundle-prod": "NODE_ENV=production webpack -p --config webpack.config.js --progress",
     "bundle-dev": "NODE_ENV=development webpack --watch --config webpack.config.js --progress",
+    "client-langs": "babel-node i18n/translator.js",
     "client-dev": "NODE_ENV=development webpack-dev-server --progress --config webpack.config.js",
     "client-win-dev": "set NODE_ENV=development&&webpack-dev-server --progress --config webpack.config.js",
     "bundle-stats": "NODE_ENV=production webpack -p --config webpack.config.js --profile --json > stats.json",
@@ -59,10 +60,12 @@
     "eslint-plugin-react": "^6.7.1",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "file-loader": "^0.9.0",
+    "glob": "^7.1.1",
     "ignore-styles": "^5.0.1",
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "mkdirp": "^0.5.1",
     "postcss-cssnext": "^2.8.0",
     "postcss-loader": "^1.1.0",
     "postcss-mixins": "^5.4.0",
@@ -93,7 +96,11 @@
     ],
     "plugins": [
       [
-        "react-intl", { "messagesDir": "./i18n", "enforceDescriptions": false }
+        "react-intl",
+        {
+          "messagesDir": "./dist/i18n/messages",
+          "enforceDescriptions": false
+        }
       ]
     ]
   }
