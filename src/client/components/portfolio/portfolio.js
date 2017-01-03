@@ -1,43 +1,26 @@
 import React from 'react';
+import R from 'ramda';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Header from '../header';
 import Footer from '../footer';
 import Contact from '../contact';
 import Splash from './splash';
 import './portfolio.less';
-import { map, uniqueId } from 'lodash';
 
-const clients = [
-  {
-    name: 'OECD',
-    description: 'OECD',
-    link: 'http://www.oecd.org/',
-    tags: ['React', 'ES6', 'D3JS']
-  },
-  {
-    name: 'Rothschild',
-    description: 'Rothschild',
-    link: 'https://www.rothschildgestion.com',
-    tags: ['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']
-  },
-  {
-    name: 'Factset',
-    description: 'Factset',
-    link: 'http://www.factset.com/',
-    tags: ['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']
-  },
-  {
-    name: 'Platform5',
-    description: 'Platform5',
-    link: 'http://www.platform5.ch',
-    tags: ['NodeJS', 'MongoDB', 'Google Map API']
-  },
-  {
-    name: 'Lexsi',
-    description: 'Lexsi',
-    link: 'https://www.lexsi.com',
-    tags: ['AngularJS', 'ES6']
-  }
-];
+const Client = ({ name, link, tags }) => (
+  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <a href={ link }><div className={`image ${name.toLowerCase()}`} /></a>
+    <p><FormattedHTMLMessage id={`portfolio.${name.toLowerCase()}.p`} /></p>
+    <p>
+      {
+        R.map(
+          (tag) => <span key={`tag#${name.toLowerCase()}#${tag}`} className="label label-rp">{ tag }</span>,
+          tags
+        )
+      }
+    </p>
+  </div>
+);
 
 const Portfolio = () => (
   <div className="portfolio">
@@ -48,23 +31,11 @@ const Portfolio = () => (
       <div className="container">
         <div className="strip top">
           <div className="row">
-            {
-              map(clients, (client) => (
-                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12" key={ uniqueId() }>
-                  <a href={ client.link }>
-                    <div className={`image ${client.name.toLowerCase()}`} />
-                  </a>
-                  <p>{ client.description }</p>
-                  <p>
-                    {
-                      map(client.tags, (tag) => (
-                        <span key={ uniqueId() } className="label label-rp">{ tag }</span>
-                      ))
-                    }
-                  </p>
-                </div>
-              ))
-            }
+            <Client name="OECD" link="http://www.oecd.org/" tags={['React', 'ES6', 'D3JS']} />
+            <Client name="Rothschild" link="https://www.rothschildgestion.com" tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']} />
+            <Client name="Factset" link="http://www.factset.com/" tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']} />
+            <Client name="Platform5" link="http://www.platform5.ch" tags={['NodeJS', 'MongoDB', 'Google Map API']} />
+            <Client name="Lexsi" link="https://www.lexsi.com" tags={['AngularJS', 'ES6']} />
           </div>
         </div>
       </div>
