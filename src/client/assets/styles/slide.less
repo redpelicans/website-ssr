@@ -18,7 +18,7 @@
     p {
       margin: 0;
       font-size: 16px;
-      q { color: @red; }
+      q, span.label-rp { color: @red; }
     }
     h2 {
       padding-bottom: 0;
@@ -80,6 +80,14 @@
     }
     span.glyphicon {
       color: @red;
+    }
+    span {
+      a {
+        text-transform: none;
+        font-size: 12px;
+        color: @light-red;
+        &:hover { color: @red; }
+      }
     }
     q {
       color: @red;

@@ -33,8 +33,16 @@ const Portfolio = () => (
           <div className="row">
             <Client name="OECD" link="http://www.oecd.org/" tags={['React', 'ES6', 'D3JS']} />
             <Client name="Rothschild" link="https://www.rothschildgestion.com" tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']} />
+          </div>
+        </div>
+        <div className="strip">
+          <div className="row">
             <Client name="Factset" link="http://www.factset.com/" tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']} />
             <Client name="Platform5" link="http://www.platform5.ch" tags={['NodeJS', 'MongoDB', 'Google Map API']} />
+          </div>
+        </div>
+        <div className="strip top">
+          <div className="row">
             <Client name="Lexsi" link="https://www.lexsi.com" tags={['AngularJS', 'ES6']} />
           </div>
         </div>
