@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import './footer.less';
 
 const Footer = () => (
@@ -19,9 +20,9 @@ const Footer = () => (
       <div className="row">
         <div className="container text-center">
           <p>
-            <span>{ 'FOOTER.COPYRIGHT' }</span>
+            <FormattedHTMLMessage id="footer.copyright" />
             &nbsp;&nbsp;<span className="glyphicon glyphicon-send" />&nbsp;&nbsp;
-            <span>{ 'FOOTER.RIGHTS' }</span>
+            <FormattedMessage id="footer.rights" />
           </p>
         </div>
       </div>

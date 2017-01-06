@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../../actions';
@@ -14,7 +15,7 @@ class Header extends Component {
           <div className="brand text-center">
             <Link to="/">
               <span className="glyphicon glyphicon-send"></span>
-              { 'REDPELICANS' }
+              <FormattedMessage id="redpelicans" />
             </Link>
           </div>
         </div>
@@ -42,25 +43,25 @@ class Header extends Component {
               <li>
                 <Link onClick={toggleMenu} to="home" className={breadcrumbs === 'home' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-home"></span>
-                  { 'HOME' }
+                  <FormattedMessage id="menu.home" />
                 </Link>
               </li>
               <li>
                 <Link onClick={toggleMenu} to="technologies" className={breadcrumbs === 'technologies' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-cog"></span>
-                  { 'TECHNOLOGIES' }
+                  <FormattedMessage id="menu.technologies" />
                 </Link>
               </li>
               <li>
                 <Link onClick={toggleMenu} to="portfolio" className={breadcrumbs === 'portfolio' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-briefcase"></span>
-                  { 'PORTFOLIO' }
+                  <FormattedMessage id="menu.portfolio" />
                 </Link>
               </li>
               <li onClick={toggleMenu}>
                 <a href="//blog.redpelicans.com">
                   <span className="glyphicon glyphicon-book"></span>
-                  { 'BLOG' }
+                  <FormattedMessage id="menu.blog" />
                 </a>
               </li>
             </ul>
