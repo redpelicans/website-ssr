@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedHTMLMessage } from 'react-intl';
 
 const Datavisualization = () => (
   <div id="datavisualization" className="slide">
@@ -6,42 +7,42 @@ const Datavisualization = () => (
       <div className="strip top">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <h1>{ "TECHNOLOGIES.DATAVISUALIZATION.H" }</h1>
-            <p>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.P1" }</p>
+            <h1><FormattedHTMLMessage id="technologies.datavisualization.h" /></h1>
+            <p><FormattedHTMLMessage id="technologies.datavisualization.content.p1" /></p>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="body">
-            <img src="images/d3js.png" />
+            <div className="image d3js" />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.H2" }</h4>
-            <p>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.P2" }</p>
+            <h4><FormattedHTMLMessage id="technologies.datavisualization.content.h2" /></h4>
+            <p><FormattedHTMLMessage id="technologies.datavisualization.content.p2" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.H3" }</h4>
-            <p>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.P3" }</p>
+            <h4><FormattedHTMLMessage id="technologies.datavisualization.content.h3" /></h4>
+            <p><FormattedHTMLMessage id="technologies.datavisualization.content.p3" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.H4" }</h4>
-            <p>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.P4" }</p>
+            <h4><FormattedHTMLMessage id="technologies.datavisualization.content.h4" /></h4>
+            <p><FormattedHTMLMessage id="technologies.datavisualization.content.p4" /></p>
           </div>
         </div>
       </div>
       <div className="strip bottom">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <p>{ "TECHNOLOGIES.DATAVISUALIZATION.CONTENT.P5" }</p>
+            <p><FormattedHTMLMessage id="technologies.datavisualization.content.p5" /></p>
           </div>
         </div>
       </div>

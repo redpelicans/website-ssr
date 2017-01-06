@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedHTMLMessage } from 'react-intl';
 
 const Backend = () => (
   <div id="backend" className="slide">
@@ -6,50 +7,50 @@ const Backend = () => (
       <div className="strip top">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <h1>{ "TECHNOLOGIES.BACKEND.H" }</h1>
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P1" }</p>
+            <h1><FormattedHTMLMessage id="technologies.backend.h" /></h1>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p1" /></p>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="body">
-            <img src="images/nodejs.png" />
+            <div className="image nodejs" />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.BACKEND.CONTENT.H2" }</h4>
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P2" }</p>
+            <h4><FormattedHTMLMessage id="technologies.backend.content.h2" /></h4>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p2" /></p>
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.BACKEND.CONTENT.H3" }</h4>
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P3" }</p>
+            <h4><FormattedHTMLMessage id="technologies.backend.content.h3" /></h4>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p3" /></p>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.BACKEND.CONTENT.H4" }</h4>
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P4" }</p>
+            <h4><FormattedHTMLMessage id="technologies.backend.content.h4" /></h4>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p4" /></p>
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.BACKEND.CONTENT.H5" }</h4>
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P5" }</p>
+            <h4><FormattedHTMLMessage id="technologies.backend.content.h5" /></h4>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p5" /></p>
           </div>
         </div>
       </div>
       <div className="strip bottom">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <p>{ "TECHNOLOGIES.BACKEND.CONTENT.P6" }</p>
+            <p><FormattedHTMLMessage id="technologies.backend.content.p6" /></p>
           </div>
         </div>
       </div>

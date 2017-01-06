@@ -59,10 +59,16 @@
     background-color: @white;
   }
   #datavisualization, #frontend, #backend, #nosql {
-    img {
+    .image {
       width: auto;
       max-width: 500px;
       padding-bottom: 40px;
+      display: inline-block;
+      &.nodejs { content: url('../../assets/images/nodejs.png'); }
+      &.d3js { content: url('../../assets/images/d3js.png'); }
+      &.mongodb { content: url('../../assets/images/mongodb.png'); }
+      &.angularjs { content: url('../../assets/images/angularjs.png'); }
+      &.react { content: url('../../assets/images/react.png'); }
     }
   }
   #datavisualization img { max-width: none; }

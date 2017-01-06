@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedHTMLMessage } from 'react-intl';
 
 const Frontend = () => (
   <div id="frontend" className="slide">
@@ -6,70 +7,70 @@ const Frontend = () => (
       <div className="strip top">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <h1>{ "TECHNOLOGIES.FRONTEND.H" }</h1>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.P1" }</p>
+            <h1><FormattedHTMLMessage id="technologies.frontend.h" /></h1>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.p1" /></p>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="body">
-            <img ng-src="images/{tool.toLowerCase()}.png" />
+            <div className="image angularjs" />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.H1" }</h4>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.P1" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.angularjs.h1" /></h4>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.angularjs.p1" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.H2" }</h4>
-            <p className="fat">{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.P2" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.angularjs.h2" /></h4>
+            <p className="fat"><FormattedHTMLMessage id="technologies.frontend.content.angularjs.p2" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.H3" }</h4>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.ANGULARJS.P3" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.angularjs.h3" /></h4>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.angularjs.p3" /></p>
           </div>
         </div>
       </div>   
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="body">
-            <img ng-src="images/{tool.toLowerCase()}.png" />
+            <div className="image react" />
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.H1" }</h4>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.P1" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.react.h1" /></h4>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.react.p1" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.H2" }</h4>
-            <p className="fat">{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.P2" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.react.h2" /></h4>
+            <p className="fat"><FormattedHTMLMessage id="technologies.frontend.content.react.p2" /></p>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="body">
-            <h4>{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.H3" }</h4>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.REACT.P3" }</p>
+            <h4><FormattedHTMLMessage id="technologies.frontend.content.react.h3" /></h4>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.react.p3" /></p>
           </div>
         </div>
       </div>
       <div className="strip bottom">
         <div className="row">
           <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.P2" }</p>
-            <p>{ "TECHNOLOGIES.FRONTEND.CONTENT.P3" }</p>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.p2" /></p>
+            <p><FormattedHTMLMessage id="technologies.frontend.content.p3" /></p>
           </div>
         </div>
       </div>
