@@ -131,7 +131,7 @@ const Content = () => (
       <HexagonXs type="datavisualization" icon="stats" color="full-dark-grey" />
       <div className="row">
         <div className="col-xs-12 center-block hex full-red">
-          <div className="isFat">
+          <div className="fat">
             <h4><span className="glyphicon glyphicon-send"></span></h4>
             <h3><FormattedHTMLMessage id="home.consulting.h" /></h3>
             <p><FormattedHTMLMessage id="home.consulting.p1" /></p>
