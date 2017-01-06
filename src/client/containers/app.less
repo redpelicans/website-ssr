@@ -5,7 +5,7 @@
 body {
   padding-top: 45px;
   font-family: @lato;
-  .app { animation: fadeInDown, 1s; }
+  #__APP__ { animation: fadeInDown, 1s; }
   a:hover, a:active, a:focus {
     outline: none;
     cursor: pointer;
@@ -14,5 +14,15 @@ body {
   ::selection {
     color: @white;
     background: @red;
+  }
+
+  .preloader {
+    padding-top: 40px;
+    text-align: center;
+    color: @red;
+    .glyphicon {
+      font-size: 200px;
+      margin-right: 14px;
+    }
   }
 }
