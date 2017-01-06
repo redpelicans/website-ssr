@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { getBreadcrumbs } from '../util';
+import 'bootstrap/dist/css/bootstrap.css';
 import './app.less';
 
 class App extends Component {

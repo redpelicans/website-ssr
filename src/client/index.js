@@ -19,8 +19,6 @@ const language = 'en';
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 const messages = localeData[languageWithoutRegionCode] || localeData[language] || localeData.en;
 
-import 'bootstrap/dist/css/bootstrap.css';
-
 const initialState = window.__PRELOADED_STATE__;
 const store = configureStore(initialState);
 const mountNode = window.document.getElementById('__APP__');
