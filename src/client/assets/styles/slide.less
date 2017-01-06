@@ -18,12 +18,12 @@
     p {
       margin: 0;
       font-size: 16px;
-      span { color: @red; }
+      q { color: @red; }
     }
     h2 {
       padding-bottom: 0;
       color: @dark-grey;
-      span { color: @red; }
+      q { color: @red; }
     }
   }
   h1 {
@@ -37,7 +37,7 @@
     margin: 0;
     padding-bottom: 60px;
     font-size: 20px;
-    span { color: @dark-grey; }
+    q { color: @dark-grey; }
   }
   h4 {
     color: @dark-red;
@@ -49,7 +49,7 @@
     .fade-link(@red, @light-grey);
   }
   .head {
-    span {
+    span.glyphicon {
       font-size: 60px;
       color: @red;
     }
@@ -78,7 +78,10 @@
       width: 100%;
       height: auto;
     }
-    span {
+    span.glyphicon {
+      color: @red;
+    }
+    q {
       color: @red;
       padding-bottom: 20px;
       display: block;

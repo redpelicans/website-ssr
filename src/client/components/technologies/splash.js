@@ -13,7 +13,7 @@ const Splash = () => (
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="separator-dark-red">
-            <span></span>
+            <span className="separator"></span>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@ const Splash = () => (
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="separator-grey">
-            <span></span>
+            <span className="separator"></span>
           </div>
         </div>
       </div>

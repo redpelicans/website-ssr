@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="row">
         <div className="col-lg-12">
           <div className="separator-grey">
-            <span></span>
+            <span className="separator"></span>
           </div>
         </div>
       </div>

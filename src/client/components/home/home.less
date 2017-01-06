@@ -16,7 +16,7 @@
     background-color: @red;
     color: @grey;
     .separator-dark-red {
-      span {
+      span.separator {
         display: block;
         .hexagon(20, @dark-red);
       }
@@ -24,7 +24,7 @@
     .separator-grey {
       position: relative;
       top: 12px;
-      span {
+      span.separator {
         display: block;
         .hexagon(20, @grey);
       }
@@ -143,33 +143,12 @@
         }
       }
 
-      .dockerThumb {
-        content: url('../../assets/images/docker-thumb.png');
-      }
-
-      .mongodbThumb {
-        content: url('../../assets/images/mongodb-thumb.png');
-      }
-
-      .nodejsThumb  {
-        content: url('../../assets/images/nodejs-thumb.png');
-      }
-
-      .angularjsThumb  {
-        content: url('../../assets/images/angularjs-thumb.png');
-      }
-
-      .reactThumb  {
-        content: url('../../assets/images/react-thumb.png');
-      }
-
-      .aureliaThumb  {
-        content: url('../../assets/images/aurelia-thumb.png');
-      }
-
-      span {
-        display: block;
-      }
+      .dockerThumb { content: url('../../assets/images/docker-thumb.png'); }
+      .mongodbThumb { content: url('../../assets/images/mongodb-thumb.png'); }
+      .nodejsThumb  { content: url('../../assets/images/nodejs-thumb.png'); }
+      .angularjsThumb  { content: url('../../assets/images/angularjs-thumb.png'); }
+      .reactThumb  { content: url('../../assets/images/react-thumb.png'); }
+      .aureliaThumb  { content: url('../../assets/images/aurelia-thumb.png'); }
     }
   }
 }
