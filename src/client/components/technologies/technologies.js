@@ -3,6 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 import Contact from '../contact';
 import Splash from './splash';
+import HeadroomRP from './headroom';
 import Javascript1 from './javascript1';
 import Javascript2 from './javascript2';
 import Datavisualization from './datavisualization';
@@ -14,6 +15,7 @@ import './technologies.less';
 const Technologies = () => (
   <div className="technologies">
     <Header />
+    <HeadroomRP />
     <Splash />
     <Javascript1 />
     <Javascript2 />

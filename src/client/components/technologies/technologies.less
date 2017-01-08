@@ -50,6 +50,56 @@
     }
   }
 
+  .headroom {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    right: 0;
+    background-image: @pattern-dot-dark-red;
+    background-color: @red;
+    border-bottom: 1px solid @dark-red;
+    transition: all .5s ease 0s;
+    nav {
+      padding: 10px 0;
+      .row {
+        position: relative;
+        & > div > div {
+          text-align: center;
+          a {
+            padding: 5px;
+            background: none;
+            font-size: 28px;
+            &.active { color: @dark-red; }
+          }
+          h3 {
+            font-size: 12px;
+            margin-top: 0;
+          }
+          p { display: none; }
+        }
+        .line {
+          border-top: 1px dotted @grey;
+          position: absolute;
+          top: 15px;
+          right: 120px;
+          left: 120px;
+          display: block;
+          z-index: -1;
+          display: none;
+        }
+      }
+    }
+    &.headroom--unpinned, &.headroom--top {
+      transform: translateY(-100%);
+    }
+    &.headroom--not-top {
+      visibility: visible;
+      transform: translateY(0%);
+    }
+  }
+
   .javascript .javascript1, #datavisualization, #backend, .contact {
     background-image: @pattern-dot-grey;
     background-color: @light-grey;
@@ -72,4 +122,33 @@
     }
   }
   #datavisualization img { max-width: none; }
+
+  .rp-nvd3-line-chart, .rp-multi-bar-horizontal-chart {
+    svg text {
+      font-size: 9px;
+      fill: @dark-grey;
+      fill-opacity: .75;
+    }
+    .nv-y.nv-axis g g g.tick:first-child { visibility: hidden; }
+    .nv-x.nv-axis path.domain { stroke-opacity: .5; }
+    .nv-axis {
+      path.domain { stroke: @dark-grey; }
+      line { stroke: @grey; stroke-opacity: .5; }
+      .nv-axisMaxMin text { font-weight: normal; }
+    }
+  }
+  .rp-multi-bar-horizontal-chart {
+    .nv-bar {
+      fill: @red;
+      stroke: @red;
+      stroke-opacity: 0.75;
+      fill-opacity: 0.75;
+      rect {
+        height: 3px;
+      }
+    }
+    .nv-axis {
+      line { visibility: hidden; }
+    }
+  }
 }

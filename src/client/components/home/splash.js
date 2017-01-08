@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Scroll from 'react-scroll';
 
 const Wrapper = ({ children }) => (
   <div className="row">
@@ -24,9 +25,9 @@ const LinkContactUs = () => (
 );
 
 const LinkHiring = () => (
-  <a href="#hiring" className="hiring" du-smooth-scroll duration="2000">
+  <Scroll.Link className="hiring" to="hiring" smooth={true} duration={2000}>
     <FormattedMessage id="hiring" />
-  </a>
+  </Scroll.Link>
 );
 
 const LinkBlog = () => (

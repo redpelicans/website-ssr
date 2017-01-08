@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Scroll from 'react-scroll';
 
 const Nav = ({ xs = 3 }) => (
   <nav>
@@ -7,36 +8,36 @@ const Nav = ({ xs = 3 }) => (
       <div className="row">
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <a href="#datavisualization" du-smooth-scroll du-scrollspy offset={115} duration="2000">
+            <Scroll.Link activeClass="active" to="datavisualization" spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-stats"></span>
-            </a>
+            </Scroll.Link>
             <h3><FormattedMessage id="technologies.datavisualization.h" /></h3>
             <p><FormattedMessage id="technologies.datavisualization.p" /></p>
           </div>
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <a href="#frontend" du-smooth-scroll du-scrollspy offset={115} duration="2000">
+            <Scroll.Link activeClass="active" to="frontend" spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-dashboard"></span>
-            </a>
+            </Scroll.Link>
             <h3><FormattedMessage id="technologies.frontend.h" /></h3>
             <p><FormattedMessage id="technologies.frontend.p" /></p>
           </div>
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <a href="#backend" du-smooth-scroll du-scrollspy offset={115} duration="2000">
+            <Scroll.Link activeClass="active" to="backend" spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-hdd"></span>
-            </a>
+            </Scroll.Link>
             <h3><FormattedMessage id="technologies.backend.h" /></h3>
             <p><FormattedMessage id="technologies.backend.p" /></p>
           </div>
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <a href="#nosql" du-smooth-scroll du-scrollspy offset={115} duration="2000">
+            <Scroll.Link activeClass="active" to="nosql" spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-leaf"></span>
-            </a>
+            </Scroll.Link>
             <h3><FormattedMessage id="technologies.nosql.h" /></h3>
             <p><FormattedMessage id="technologies.nosql.p" /></p>
           </div>
