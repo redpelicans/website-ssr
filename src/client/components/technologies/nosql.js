@@ -6,7 +6,7 @@ const Nosql = () => (
     <div className="container">
       <div className="strip top">
         <div className="row">
-          <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-10 col-sm-12 col-xs-12">
+          <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
             <h1><FormattedHTMLMessage id="technologies.nosql.h" /></h1>
             <p><FormattedHTMLMessage id="technologies.nosql.content.p1" /></p>
           </div>
@@ -49,7 +49,7 @@ const Nosql = () => (
       </div>
       <div className="strip bottom">
         <div className="row">
-          <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-10 col-sm-12 col-xs-12">
+          <div className="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
             <p><FormattedHTMLMessage id="technologies.nosql.content.p6" /></p>
           </div>
         </div>
