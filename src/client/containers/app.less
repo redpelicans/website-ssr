@@ -2,10 +2,26 @@
 @import '../assets/styles/fonts';
 @import '../assets/styles/media';
 
+/* The animation code */
+@keyframes example {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* The element to apply the animation to */
+.home, .technologies, .portfolio {
+  animation-name: example;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
 body {
   padding-top: 45px;
   font-family: @lato;
-  #__APP__ { animation: fadeInDown, 1s; }
   a:hover, a:active, a:focus {
     outline: none;
     cursor: pointer;
