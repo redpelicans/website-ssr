@@ -24,7 +24,7 @@ const webpackConfig = {
   },
   entry: {
     app: './src/client/index.js',
-    vendor: ['lodash', 'ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
+    vendor: ['moment', 'ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
   },
   module: {
     loaders: [

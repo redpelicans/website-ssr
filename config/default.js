@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   justSSR: false,
-  compress: false,
+  compress: true,
   public: {
     path: path.join(__dirname, '../public'),
   },

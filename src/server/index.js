@@ -14,7 +14,7 @@ const createServer = (cb) => {
   const app = express();
   const httpServer = http.createServer(app);
 
-  console.warn('Warning, you are running server in SSR exclusive mode');
+  if (justSSR) console.warn('Warning, you are running server in SSR exclusive mode');
 
   compress && app.use(compression());
   app.use('/public', express.static(publicConfig.path));
