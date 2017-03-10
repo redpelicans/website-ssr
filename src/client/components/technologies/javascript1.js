@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedHTMLMessage } from 'react-intl';
 import NVD3Chart from 'react-nvd3';
-import moment from 'moment';
 
 const performanceData = [
   { key: 'data', values: [
@@ -151,6 +150,7 @@ const adoption = {
   yAxis: { tickFormat: (d, i) => parseInt(d/1000)+'k', ticks: 12 }
 };
 
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const ecosystem = {
   data: [
     { key: 'npm (Javascript)'
@@ -426,7 +426,13 @@ const ecosystem = {
       ]
     }
   ],
-  xAxis: { tickFormat: (d, i) => moment.unix(d).format('MMM YYYY'), ticks: 4 },
+  xAxis: {
+    tickFormat: (d, i) => {
+      const date = new Date(d*1000);
+      return `${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+    },
+    ticks: 4
+  },
   yAxis: { tickFormat: (d, i) => parseInt(d/1000)+'k', ticks: 12 }
 };
 
