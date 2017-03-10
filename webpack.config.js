@@ -83,7 +83,7 @@ const webpackConfig = {
         loader: 'file-loader'
       },
       {
-        test: /\.(gif|png|jpe?g)$/,
+        test: /\.(gif|png|jpe?g|ico)$/,
         loader: 'url-loader',
         query: {
           limit: 100000

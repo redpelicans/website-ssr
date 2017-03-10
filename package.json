@@ -4,7 +4,7 @@
   "description": "Website of RedPelicans (in progress)",
   "main": "",
   "scripts": {
-    "bundle-prod": "NODE_ENV=production webpack -p --config webpack.config.js --progress",
+    "bundle-prod": "set NODE_ENV=development&&webpack -p --config webpack.config.js --progress",
     "bundle-dev": "NODE_ENV=development webpack --watch --config webpack.config.js --progress",
     "client-dev": "NODE_ENV=development webpack-dev-server --progress --config webpack.config.js",
     "client-win-dev": "set NODE_ENV=development&&webpack-dev-server --progress --config webpack.config.js",

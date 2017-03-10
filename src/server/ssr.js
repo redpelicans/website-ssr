@@ -22,14 +22,19 @@ const kro = getFile(publicConfig.path, 'kro.min', '.js');
 
 const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState, justSSR }) => `
   <html>
-    <head> 
+    <head>
       <title>redpelicans</title>
       <style type="text/css"> ${appCss} </style>
       <script>${kro}</script>
       <meta charset="utf-8">
     </head>
     <body>
-      <div id='__APP__'>${html}</div>
+      <div id='__APP__'>
+        <div class="preloader">
+          <span class="glyphicon glyphicon-send"></span>
+        </div>
+        ${html}
+      </div>
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)};
       </script>
