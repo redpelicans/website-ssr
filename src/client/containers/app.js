@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getBreadcrumbs } from '../util';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.less';
-import '../assets/images/favicon.ico';
 
 class App extends Component {
   getChildContext() {
