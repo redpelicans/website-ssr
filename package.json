@@ -4,14 +4,13 @@
   "description": "Website of RedPelicans (in progress)",
   "main": "",
   "scripts": {
-    "bundle-prod": "set NODE_ENV=development&&webpack -p --config webpack.config.js --progress",
-    "bundle-dev": "NODE_ENV=development webpack --watch --config webpack.config.js --progress",
-    "client-dev": "NODE_ENV=development webpack-dev-server --progress --config webpack.config.js",
-    "client-win-dev": "set NODE_ENV=development&&webpack-dev-server --progress --config webpack.config.js",
-    "bundle-stats": "NODE_ENV=production webpack -p --config webpack.config.js --profile --json > stats.json",
+    "bundle-prod": "cross-env NODE_ENV=production webpack -p --config webpack.config.js --progress",
+    "bundle-dev": "cross-env NODE_ENV=development webpack --watch --config webpack.config.js --progress",
+    "client-dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config webpack.config.js",
+    "bundle-stats": "cross-env NODE_ENV=production webpack -p --config webpack.config.js --profile --json > stats.json",
     "bundle-analyse": "webpack-bundle-analyzer ./stats.json  --report --mode=static",
-    "server-dev": "NODE_ENV=development babel-watch -w ./config -w ./src -w ./dist src/server/index.js",
-    "server-prod": "NODE_ENV=production babel-node  src/server/index.js",
+    "server-dev": "cross-env NODE_ENV=development babel-watch -w ./config -w ./src -w ./dist src/server/index.js",
+    "server-prod": "cross-env NODE_ENV=production babel-node  src/server/index.js",
     "lint": "eslint src/client --color"
   },
   "repository": {
@@ -55,6 +54,7 @@
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.2.3",
     "css-loader": "^0.25.0",
     "eslint": "^3.10.2",
     "eslint-config-airbnb": "^12.0.0",
