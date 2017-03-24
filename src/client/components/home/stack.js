@@ -5,7 +5,28 @@ import mongodbThumb from '../../assets/images/mongodb-thumb.png';
 import nodejsThumb from '../../assets/images/nodejs-thumb.png';
 import angularjsThumb from '../../assets/images/angularjs-thumb.png';
 import reactThumb from '../../assets/images/react-thumb.png';
-import aureliaThumb from '../../assets/images/aurelia-thumb.png';
+import d3Thumb from '../../assets/images/d3-thumb.png';
+import redisThumb from '../../assets/images/redis-thumb.png';
+
+const Line = ({ items }) => (
+  <div className="row">
+    {
+      R.map(
+        (s) => (
+          <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12" key={`stack#${s.name}`}>
+            <div className="wrapper">
+              <a href={s.link}>
+                <div className={`image ${s.image}`} />
+                <span>{s.name}</span>
+              </a>
+            </div>
+          </div>
+        ),
+        items
+      )
+    }
+  </div>
+);
 
 const Stack = () => (
   <div id="stack" className="light-grey slide">
@@ -18,28 +39,20 @@ const Stack = () => (
         </div>
       </div>
       <div className="row">
-        {
-          R.map(
-            (s) => (
-              <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12" key={`stack#${s.name}`}>
-                <div className="wrapper">
-                  <a href={s.link}>
-                    <div className={`image ${s.image}`} />
-                    <span>{s.name}</span>
-                  </a>
-                </div>
-              </div>
-            ),
-            [
-              { name: "Docker", image: "dockerThumb", link: "https://www.docker.com/" },
-              { name: "MongoDB", image: "mongodbThumb", link: "https://www.mongodb.org/" },
-              { name: "Node.js", image: "nodejsThumb", link: "https://nodejs.org/" },
-              { name: "AngularJS", image: "angularjsThumb", link: "https://angularjs.org/" },
-              { name: "React", image: "reactThumb", link: "http://facebook.github.io/react/" },
-              { name: "Aurelia", image: "aureliaThumb", link: "http://aurelia.io/" },
-            ]
-          )
-        }
+        <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12"></div>
+        <Line items={[
+          { name: "MongoDB", image: "mongodbThumb", link: "https://www.mongodb.org/" },
+          { name: "Node.js", image: "nodejsThumb", link: "https://nodejs.org/" },
+          { name: "React", image: "reactThumb", link: "http://facebook.github.io/react/" },
+          { name: "React Native", image: "reactThumb", link: "https://facebook.github.io/react-native/" },
+        ]} />
+        <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12"></div>
+        <Line items={[
+          { name: "Docker", image: "dockerThumb", link: "https://www.docker.com/" },
+          { name: "AngularJS", image: "angularjsThumb", link: "https://angularjs.org/" },
+          { name: "D3JS", image: "d3Thumb", link: "https://d3js.org/" },
+          { name: "Redis", image: "redisThumb", link: "https://redis.io/" },
+        ]} />
       </div>
     </div>
   </div>
