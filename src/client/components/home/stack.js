@@ -13,7 +13,7 @@ const Line = ({ items }) => (
     {
       R.map(
         (s) => (
-          <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12" key={`stack#${s.name}`}>
+          <div className="col-lg-2 col-md-2 col-sm-3 col-xs-12" key={`stack#${s.name}`}>
             <div className="wrapper">
               <a href={s.link}>
                 <div className={`image ${s.image}`} />
@@ -39,14 +39,14 @@ const Stack = () => (
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12"></div>
+        <div className="col-lg-2 col-md-2 hidden-sm col-xs-12"></div>
         <Line items={[
           { name: "MongoDB", image: "mongodbThumb", link: "https://www.mongodb.org/" },
           { name: "Node.js", image: "nodejsThumb", link: "https://nodejs.org/" },
           { name: "React", image: "reactThumb", link: "http://facebook.github.io/react/" },
           { name: "React Native", image: "reactThumb", link: "https://facebook.github.io/react-native/" },
         ]} />
-        <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12"></div>
+        <div className="col-lg-2 col-md-2 hidden-sm col-xs-12"></div>
         <Line items={[
           { name: "Docker", image: "dockerThumb", link: "https://www.docker.com/" },
           { name: "AngularJS", image: "angularjsThumb", link: "https://angularjs.org/" },
