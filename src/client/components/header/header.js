@@ -41,19 +41,19 @@ class Header extends Component {
           <nav role="navigation">
             <ul>
               <li>
-                <Link onClick={toggleMenu} to="home" className={breadcrumbs === 'home' ? 'active' : ''}>
+                <Link onClick={toggleMenu} to="/home" className={breadcrumbs === 'home' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-home"></span>
                   <FormattedMessage id="menu.home" />
                 </Link>
               </li>
               <li>
-                <Link onClick={toggleMenu} to="technologies" className={breadcrumbs === 'technologies' ? 'active' : ''}>
+                <Link onClick={toggleMenu} to="/technologies" className={breadcrumbs === 'technologies' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-cog"></span>
                   <FormattedMessage id="menu.technologies" />
                 </Link>
               </li>
               <li>
-                <Link onClick={toggleMenu} to="portfolio" className={breadcrumbs === 'portfolio' ? 'active' : ''}>
+                <Link onClick={toggleMenu} to="/portfolio" className={breadcrumbs === 'portfolio' ? 'active' : ''}>
                   <span className="glyphicon glyphicon-briefcase"></span>
                   <FormattedMessage id="menu.portfolio" />
                 </Link>

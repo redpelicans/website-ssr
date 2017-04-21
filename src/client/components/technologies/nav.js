@@ -8,7 +8,7 @@ const Nav = ({ xs = 3 }) => (
       <div className="row">
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <Scroll.Link activeClass="active" to="datavisualization" spy={true} smooth={true} duration={2000}>
+            <Scroll.Link activeClass="active" to="datavisualization" offset={-75} spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-stats"></span>
             </Scroll.Link>
             <h3><FormattedMessage id="technologies.datavisualization.h" /></h3>
@@ -17,7 +17,7 @@ const Nav = ({ xs = 3 }) => (
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <Scroll.Link activeClass="active" to="frontend" spy={true} smooth={true} duration={2000}>
+            <Scroll.Link activeClass="active" to="frontend" offset={-75} spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-dashboard"></span>
             </Scroll.Link>
             <h3><FormattedMessage id="technologies.frontend.h" /></h3>
@@ -26,7 +26,7 @@ const Nav = ({ xs = 3 }) => (
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <Scroll.Link activeClass="active" to="backend" spy={true} smooth={true} duration={2000}>
+            <Scroll.Link activeClass="active" to="backend" offset={-75} spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-hdd"></span>
             </Scroll.Link>
             <h3><FormattedMessage id="technologies.backend.h" /></h3>
@@ -35,7 +35,7 @@ const Nav = ({ xs = 3 }) => (
         </div>
         <div className={`col-lg-3 col-md-3 col-sm-3 col-xs-${xs}`}>
           <div>
-            <Scroll.Link activeClass="active" to="nosql" spy={true} smooth={true} duration={2000}>
+            <Scroll.Link activeClass="active" to="nosql" offset={-75} spy={true} smooth={true} duration={2000}>
               <span className="glyphicon glyphicon-leaf"></span>
             </Scroll.Link>
             <h3><FormattedMessage id="technologies.nosql.h" /></h3>

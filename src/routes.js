@@ -30,7 +30,7 @@ const routes = ({
       }
     },
     {
-      path: 'technologies',
+      path: 'technologies(/:anchor)',
       name: 'Technologies',
       getComponent(location, cb) {
         System.import('./client/components/technologies').then(loadRoute(cb)).catch(errorLoading);

@@ -83,6 +83,15 @@
       }
     }
     .hex {
+      &.col-xs-12 {
+        width: 290px;
+        div.fat {
+          margin: 0;
+          p {
+            letter-spacing: 0.5px;
+          }
+        }
+      }
       div {
         margin: 80px 0;
         min-height: 125px;
@@ -102,9 +111,13 @@
           }
         }
         p {
+          letter-spacing: .3px;
           padding-top: 5px;
         }
         span.glyphicon { font-size: 70px; }
+        &.fat {
+          min-height: 207px;
+        }
       }
     }
   }
