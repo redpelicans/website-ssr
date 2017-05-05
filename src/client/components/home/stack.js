@@ -29,7 +29,7 @@ const Line = ({ items }) => (
 );
 
 const Stack = () => (
-  <div id="stack" className="light-grey slide">
+  <div id="stack" className="grey slide">
     <div className="container">
       <div className="row">
         <div className="col-lg-12 col-xs-12">

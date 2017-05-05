@@ -29,59 +29,65 @@ const Portfolio = () => (
 
     <div className="content slide">
       <div className="container">
-        <div className="strip top">
-          <div className="row">
-            <Client
-              name="venteprivee"
-              link="http://www.vente-privee.com"
-              tags={['React', 'Redux', 'ES6']}
-            />
-            <Client
-              name="jeuxvideocom"
-              link="http://www.jeuxvideo.com/"
-              tags={['NodeJS', 'Redis', 'RabbitMQ', 'React', 'Server-side Rendering']}
-            />
-          </div>
-          <div className="row">
-            <Client
-              name="OECD"
-              link="http://www.oecd.org/"
-              tags={['React', 'Redux', 'ES6', 'D3JS']}
-            />
-            <Client
-              name="CNES"
-              link="https://cnes.fr/"
-              tags={['Electron', 'React', 'Redux']}
-            />
-          </div>
+        <div className="row">
+          <Client
+            name="venteprivee"
+            link="http://www.vente-privee.com"
+            tags={['React', 'Redux', 'ES6']}
+          />
+          <Client
+            name="jeuxvideocom"
+            link="http://www.jeuxvideo.com/"
+            tags={['NodeJS', 'Redis', 'RabbitMQ', 'React', 'Server-side Rendering']}
+          />
         </div>
-        <div className="strip">
-          <div className="row">
-            <Client
-              name="Rothschild"
-              link="https://www.rothschildgestion.com"
-              tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
-            />
-            <Client
-              name="Factset"
-              link="http://www.factset.com/"
-              tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
-            />
-          </div>
+        <div className="row">
+          <Client
+            name="lvmh"
+            link="https://www.lvmh.fr/"
+            tags={['React', 'Redux', 'ES6']}
+          />
+          <Client
+            name="eiffage"
+            link="http://www.eiffage.com"
+            tags={['NodeJS', 'React', 'ES6']}
+          />
         </div>
-        <div className="strip top">
-          <div className="row">
-            <Client
-              name="Lexsi"
-              link="https://www.lexsi.com"
-              tags={['AngularJS', 'ES6']}
-            />
-            <Client
-              name="Platform5"
-              link="http://www.platform5.ch"
-              tags={['NodeJS', 'MongoDB', 'Google Map API']}
-            />
-          </div>
+        <div className="row">
+          <Client
+            name="OECD"
+            link="http://www.oecd.org/"
+            tags={['React', 'Redux', 'ES6', 'D3JS']}
+          />
+          <Client
+            name="CNES"
+            link="https://cnes.fr/"
+            tags={['Electron', 'React', 'Redux']}
+          />
+        </div>
+        <div className="row">
+          <Client
+            name="Rothschild"
+            link="https://www.rothschildgestion.com"
+            tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
+          />
+          <Client
+            name="Factset"
+            link="http://www.factset.com/"
+            tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
+          />
+        </div>
+        <div className="row">
+          <Client
+            name="Lexsi"
+            link="https://www.lexsi.com"
+            tags={['AngularJS', 'ES6']}
+          />
+          <Client
+            name="Platform5"
+            link="http://www.platform5.ch"
+            tags={['NodeJS', 'MongoDB', 'Google Map API']}
+          />
         </div>
       </div>
     </div>

@@ -36,6 +36,12 @@ const LinkBlog = () => (
   </a>
 );
 
+const LinkSchool = () => (
+  <Scroll.Link className="school" to="school" smooth={true} duration={2000}>
+    <FormattedMessage id="school" />
+  </Scroll.Link>
+);
+
 const Splash = () => (
   <div className="splash">
     <div className="container">
@@ -65,6 +71,7 @@ const Splash = () => (
           <h4 className="text-center">
             <LinkContactUs />
             <LinkHiring />
+            <LinkSchool />
             <LinkBlog />
           </h4>
         </div>
@@ -72,6 +79,7 @@ const Splash = () => (
           <h4 className="text-center">
             <div><LinkContactUs /></div><br />
             <div><LinkHiring /></div><br />
+            <div><LinkSchool /></div><br />
             <div><LinkBlog /></div>
           </h4>
         </div>

@@ -7,6 +7,7 @@ import Content from './content';
 import Devops from './devops';
 import Consulting2 from './consulting2';
 import Hiring from './hiring';
+import School from './school.js';
 import Stack from './stack';
 import './home.less';
 
@@ -19,6 +20,7 @@ const Home = () => (
     <Devops />
     <Consulting2 />
     <Hiring />
+    <School />
     <Stack />
     <Footer />
   </div>
