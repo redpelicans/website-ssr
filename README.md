@@ -46,3 +46,14 @@ We need to rebuild webpack contents and write them to `./build` each time client
   $ yarn start
   server started on http://0.0.0.0:5555
 ```
+
+
+## Docker
+
+
+```
+# cd website
+# docker build --no-cache -t redpelicans/website .
+# docker push redpelicans/website
+// restart website and proxy
+```
