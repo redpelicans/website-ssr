@@ -6,8 +6,8 @@ module.exports = {
   public: {
     path: path.join(__dirname, '../public'),
   },
-  dist: {
-    path: path.join(__dirname, '../dist'),
+  build: {
+    path: path.join(__dirname, '../build'),
   },
   server: {
     host: '0.0.0.0',

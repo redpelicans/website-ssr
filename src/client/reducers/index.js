@@ -15,4 +15,3 @@ export const menu = (state = { isVisible: false }, action) => {
 
 const rootReducer = combineReducers({ menu });
 export default rootReducer;
-

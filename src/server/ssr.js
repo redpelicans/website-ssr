@@ -11,13 +11,13 @@ import { getFile, getHashedUrl } from './util';
 import routes  from '../routes';
 import { App } from '../client/containers'
 import { menu } from '../client/reducers';
-import { justSSR, dist as distConfig, public as publicConfig } from '../../config';
+import { justSSR, build as buildConfig, public as publicConfig } from '../../config';
 
 addLocaleData([...en, ...fr]);
 
 const appJsUrl = getHashedUrl('app', '.js');
 const vendorJsUrl = getHashedUrl('vendor', '.js');
-const appCss = getFile(distConfig.path, 'styles', '.css');
+const appCss = getFile(buildConfig.path, 'styles', '.css');
 const kro = getFile(publicConfig.path, 'kro.min', '.js');
 
 const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState, justSSR }) => `
@@ -36,7 +36,7 @@ const indexHtml = ({ appCss, html, vendorJsUrl, appJsUrl, preloadedState, justSS
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)};
       </script>
       <script>
-        $kro.sync({ scripts: ['${vendorJsUrl}', '${justSSR ? '' : appJsUrl}'], ready: () => console.log('App loaded.') });
+        $kro.sync({ scripts: ['${vendorJsUrl}', '${justSSR ? null : appJsUrl}'], ready: () => console.log('App loaded.') });
       </script>
     </body>
   </html>

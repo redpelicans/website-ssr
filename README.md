@@ -20,7 +20,7 @@ The first target of the project is to render pages server side. So we have to de
 ```
   $ yarn run client-dev
   http://0.0.0.0:3000/
-  webpack result is served from /dist/
+  webpack result is served from /build/
   content is served from ./public
 ```
 
@@ -30,10 +30,19 @@ client, hot reload is enable. `index.html` is a static file served from `./publi
 
 ## Full sides
 
-We need to rebuild webpack contents and write them to `./dist` each time clint code is modified and rerun server each time server code is ..., so run 2 commands in 2 seprated shells:
+We need to rebuild webpack contents and write them to `./build` each time client code is modified and rerun server each time server code is ..., so run 2 commands in 2 seprated shells:
 
 ```
-  $ yarn run bundle-dev
-  $ yarn run server-dev
+  $ yarn bundle:dev
+  $ yarn server:dev
  
+```
+
+## Production mode
+
+```
+  $ yarn bundle:build
+  $ yarn server:dist
+  $ yarn start
+  server started on http://0.0.0.0:5555
 ```
