@@ -72,8 +72,8 @@
     "glob": "^7.1.1",
     "ignore-styles": "^5.0.1",
     "json-loader": "^0.5.4",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
     "mkdirp": "^0.5.1",
     "postcss-cssnext": "^2.8.0",
     "postcss-loader": "^1.1.0",
@@ -85,12 +85,12 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-logger": "^2.7.4",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^2.1.0-beta.26",
-    "webpack-bundle-analyzer": "^1.5.0",
-    "webpack-dev-server": "^2.1.0-beta.10",
-    "webpack-merge": "^0.15.0"
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1",
+    "webpack-bundle-analyzer": "^2.6.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "babel": {
     "presets": [
