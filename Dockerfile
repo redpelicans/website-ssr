@@ -16,4 +16,4 @@ WORKDIR /opt/website
 ENV NODE_ENV production
 ENV PORT 80
 #ENV DEBUG main:*
-CMD yarn:start
+CMD yarn start
