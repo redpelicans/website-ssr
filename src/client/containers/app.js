@@ -2,6 +2,8 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { getBreadcrumbs } from '../util';
 import 'bootstrap/dist/css/bootstrap.css';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+
 import './app.less';
 
 class App extends Component {
@@ -13,9 +15,12 @@ class App extends Component {
   render() {
     const { children } = this.props;
     return (
-      <div className='app'>
+      <CSSTransitionGroup 
+        transitionName="app"
+        transitionEnterTimeout={500}
+        className='app'>
         {children}
-      </div>
+      </CSSTransitionGroup>
     );
   }
 }

@@ -31,7 +31,7 @@ match({ history, routes }, (error, redirectLocation, renderProps) => {
   const root = (
     <Provider store={store}>
       <IntlProvider locale={language} messages={messages}>
-        <Router {...renderProps} render={applyRouterMiddleware(useScroll(scrollBack))} />
+        <Router {...renderProps} />
       </IntlProvider>
     </Provider>
   );

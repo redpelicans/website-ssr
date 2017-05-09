@@ -25,6 +25,7 @@ const routes = ({
     {
       path: 'home',
       name: 'Home',
+      key: 'Home',
       getComponent(location, cb) {
         System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
       }
@@ -32,6 +33,7 @@ const routes = ({
     {
       path: 'technologies(/:anchor)',
       name: 'Technologies',
+      key: 'Technologies',
       getComponent(location, cb) {
         System.import('./client/components/technologies').then(loadRoute(cb)).catch(errorLoading);
       }
@@ -39,6 +41,7 @@ const routes = ({
     {
       path: 'portfolio',
       name: 'Portfolio',
+      key: 'Portfolio',
       getComponent(location, cb) {
         System.import('./client/components/portfolio').then(loadRoute(cb)).catch(errorLoading);
       }
@@ -46,6 +49,7 @@ const routes = ({
     {
       path: '*',
       name: 'Home',
+      key: 'Home',
       getComponent(location, cb) {
         System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
       }
