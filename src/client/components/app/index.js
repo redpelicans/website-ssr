@@ -12,7 +12,6 @@ const makeRoute = (route, withTransition) => props => {
 };
 
 class App extends Component {
-  state = { }
 
   componentWillMount() {
     this.ssr = this.props.ssr;
