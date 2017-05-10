@@ -11,9 +11,9 @@ import School from './school.js';
 import Stack from './stack';
 import './home.less';
 
-const Home = () => (
+const Home = ({ name }) => (
   <div className="home">
-    <Header />
+    <Header breadcrumbs={name} />
     <Splash />
     <Consulting1 />
     <Content />

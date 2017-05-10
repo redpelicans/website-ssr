@@ -1,5 +1,4 @@
 import React from 'react';
-import R from 'ramda';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 const Consulting1 = () => (
@@ -12,8 +11,12 @@ const Consulting1 = () => (
       </div>
       <div className="row">
         {
-          R.map(
-            (c) => (
+          [
+            { icon: 'road', id: 1 },
+            { icon: 'flash', id: 2 },
+            { icon: 'record', id: 3 },
+          ].map(
+            c => (
               <div className="col-lg-4 col-md-4 col-xs-12 col-sm-4" key={`consulting1#${c.id}`}>
                 <div className="head">
                   <span className={`glyphicon glyphicon-${c.icon}`}></span>
@@ -23,12 +26,7 @@ const Consulting1 = () => (
                   <p><FormattedHTMLMessage id={`home.consulting1.content.p${c.id}`} /></p>
                 </div>
               </div>
-            ),
-            [
-              { icon: 'road', id: 1 },
-              { icon: 'flash', id: 2 },
-              { icon: 'record', id: 3 },
-            ]
+            )
           )
         }
       </div>

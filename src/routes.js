@@ -1,5 +1,3 @@
-import { App } from './client/containers';
-
 if (typeof System === 'undefined') {
   console.log('polyfill System.import');
   global.System = {};
@@ -12,45 +10,34 @@ else if (typeof System.import === 'undefined') {
 
 const loadRoute = (cb) => (module) => cb(null, module.default);
 const errorLoading = (err) => console.error('Dynamic page loading failed', err);
-const routes = ({
-  path: '/',
-  component: App,
-  name: 'Home', 
-  indexRoute: {
-    getComponent(location, cb) {
-      System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
-    }
-  },
-  childRoutes: [
-    {
-      path: 'home',
-      name: 'Home',
-      getComponent(location, cb) {
-        System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
-      }
-    },
-    {
-      path: 'technologies(/:anchor)',
-      name: 'Technologies',
-      getComponent(location, cb) {
-        System.import('./client/components/technologies').then(loadRoute(cb)).catch(errorLoading);
-      }
-    },
-    {
-      path: 'portfolio',
-      name: 'Portfolio',
-      getComponent(location, cb) {
-        System.import('./client/components/portfolio').then(loadRoute(cb)).catch(errorLoading);
-      }
-    },
-    {
-      path: '*',
-      name: 'Home',
-      getComponent(location, cb) {
-        System.import('./client/components/home').then(loadRoute(cb)).catch(errorLoading);
-      }
-    }
-  ],
-});
 
+import Home from './client/components/home';
+import Technologies from './client/components/technologies';
+import Portfolio from './client/components/portfolio';
+
+const routes = ([
+    {
+      path: '/home',
+      name: 'home',
+      exact: true,
+      component: Home,
+      default: true,
+    },
+    {
+      //path: '/technologies(/:anchor)',
+      path: '/technologies',
+      exact: true,
+      name: 'technologies',
+      component: Technologies,
+    },
+    {
+      path: '/portfolio',
+      name: 'portfolio',
+      exact: true,
+      component: Portfolio,
+    },
+  ]
+);
+
+export const defaultRoute = () => routes.filter(r => r.default)[0];
 export default routes;

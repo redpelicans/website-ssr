@@ -1,5 +1,4 @@
 import React from 'react';
-import R from 'ramda';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Header from '../header';
 import Footer from '../footer';
@@ -13,18 +12,15 @@ const Client = ({ name, link, tags }) => (
     <p><FormattedHTMLMessage id={`portfolio.${name.toLowerCase()}.p`} /></p>
     <p>
       {
-        R.map(
-          (tag) => <span key={`tag#${name.toLowerCase()}#${tag}`} className="label label-rp">{ tag }</span>,
-          tags
-        )
+        tags.map(tag => <span key={`tag#${name.toLowerCase()}#${tag}`} className="label label-rp">{ tag }</span>)
       }
     </p>
   </div>
 );
 
-const Portfolio = () => (
+const Portfolio = ({ name }) => (
   <div className="portfolio">
-    <Header />
+    <Header breadcrumbs={name} />
     <Splash />
 
     <div className="content slide">

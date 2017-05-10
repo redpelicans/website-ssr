@@ -1,5 +1,4 @@
 import React from 'react';
-import R from 'ramda';
 import { FormattedMessage } from 'react-intl';
 import mongodbThumb from '../../assets/images/mongodb-thumb.png';
 import nodejsThumb from '../../assets/images/nodejs-thumb.png';
@@ -11,7 +10,7 @@ import redisThumb from '../../assets/images/redis-thumb.png';
 const Line = ({ items }) => (
   <div className="row">
     {
-      R.map(
+      items.map(
         (s) => (
           <div className="col-lg-2 col-md-2 col-sm-3 col-xs-12" key={`stack#${s.name}`}>
             <div className="wrapper">
@@ -21,8 +20,7 @@ const Line = ({ items }) => (
               </a>
             </div>
           </div>
-        ),
-        items
+        )
       )
     }
   </div>

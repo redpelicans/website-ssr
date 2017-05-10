@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
 
 const linkFactory = (anchor, intlKey) => (

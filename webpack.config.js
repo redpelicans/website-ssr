@@ -24,7 +24,14 @@ const webpackConfig = {
   },
   entry: {
     app: './src/client/index.js',
-    vendor: ['ramda', 'react', 'react-dom', 'react-router', 'react-redux', 'redux'],
+    vendor: ['react-transition-group', 'preact', 'preact-compat', 'react', 'react-dom', 'react-router', 'react-router-dom', 'react-intl', 'react-headrooms', 'd3', 'react-nvd3', 'react-scroll'],
+  },
+  resolve: {
+    alias: {
+      react: "preact-compat",
+      'react-dom': "preact-compat",
+      //'react-addons-transition-group': 'preact-transition-group',
+    },
   },
   module: {
     loaders: [
