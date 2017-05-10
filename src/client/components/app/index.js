@@ -15,17 +15,14 @@ class App extends Component {
   state = { }
 
   componentWillMount() {
-    const { ssr } = this.props;
-    this.setState({ ssr });
+    this.ssr = this.props.ssr;
   }
 
-  componentDidUpdate() {
-    const { ssr } = this.state;
-    if (ssr) this.setState({ ssr: false });
+  componentWillUpdate() {
+    if (this.ssr) this.ssr = false;
   }
 
   render() {
-    const { ssr } = this.state;
     return (
       <div className='app'>
         <Switch>
@@ -34,7 +31,7 @@ class App extends Component {
               key={index}
               path={route.path}
               exact={route.exact}
-              render={makeRoute(route, !ssr)}
+              render={makeRoute(route, !this.ssr)}
             />
           ))}
           <Redirect to={defaultRoute().path} />
