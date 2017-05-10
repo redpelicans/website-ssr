@@ -34,67 +34,44 @@ const webpackConfig = {
     },
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: package.babel,
-        query: {
-          // to be checked
+        options: {
           cacheDirectory: true,
         }
       },
       {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [ 
-            'css-loader', 
-            { 
-              loader: 'postcss-loader',
-              options: getPostcssPlugins()
-            }
-          ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader'],
         })
       },
-
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [ 
-            'css-loader', 
-            {
-              loader: 'postcss-loader', 
-              options: getPostcssPlugins(),
-            },
-            'less-loader',
-          ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [ 'css-loader', 'postcss-loader', 'less-loader'],
         })
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        use: 'json-loader'
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          type: 'application/font-woff'
-        }
+        use: 'url-loader',
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader'
+        use: 'file-loader'
       },
       {
         test: /\.(gif|png|jpe?g|ico)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 100000
-        }
+        use: 'url-loader',
       }
     ],
   },
