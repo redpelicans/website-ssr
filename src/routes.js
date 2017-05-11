@@ -24,9 +24,8 @@ const routes = ([
       default: true,
     },
     {
-      //path: '/technologies(/:anchor)',
-      path: '/technologies',
-      exact: true,
+      path: '/technologies/:anchor?',
+      exact: false,
       name: 'technologies',
       component: Technologies,
     },
