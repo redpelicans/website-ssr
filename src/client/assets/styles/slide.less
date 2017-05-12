@@ -1,6 +1,12 @@
 .slide {
   text-align: center;
   padding: 60px 0;
+  span.label-rp {
+    background-color: @red;
+    font-weight: normal;
+    margin: 0 4px;
+    opacity: .75;
+  }
   .strip {
     &.top {
       h1 {
@@ -18,7 +24,7 @@
     p {
       margin: 0;
       font-size: 16px;
-      q, span.label-rp { color: @red; }
+      q { color: @red; }
     }
     h2 {
       padding-bottom: 0;
