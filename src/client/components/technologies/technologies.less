@@ -112,6 +112,18 @@
     background-image: @pattern-dot-light-grey;
     background-color: @white;
   }
+  .javascript1 {
+    &.slide .body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image {
+      &.ecosystem { content: url('../../assets/images/ecosystem.png'); }
+      &.performance { content: url('../../assets/images/performance.png'); }
+      &.adoption { content: url('../../assets/images/adoption.png'); }
+    }
+  }
   #datavisualization, #frontend, #backend, #nosql {
     .image {
       width: auto;
@@ -126,143 +138,4 @@
     }
   }
   #datavisualization img { max-width: none; }
-
-  svg.nvd3-svg {
-    user-select: none;
-    display: block;
-    width:100%;
-    height:100%;
-  }
-
-  .nvd3 .nv-groups path.nv-line {
-    fill: none;
-  }
-
-  .nvd3 .nv-groups path.nv-area {
-    stroke: none;
-  }
-
-  .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
-    fill-opacity: 0;
-    stroke-opacity: 0;
-  }
-
-  .with-transitions .nvd3 .nv-groups .nv-point {
-    transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
-  }
-
-  .nvd3 .nv-point-paths path {
-    stroke: #aaa;
-    stroke-opacity: 0;
-    fill: #eee;
-    fill-opacity: 0;
-  }
-
-  .nvd3 .nv-indexLine {
-    cursor: ew-resize;
-  }
-
-  .nvd3 .nv-legend .nv-series {
-    cursor: pointer;
-  }
-
-  .nvd3 .nv-legend .nv-disabled circle {
-    fill-opacity: 0;
-  }
-
-  .nvd3 .nv-brush .extent {
-    fill-opacity: 0 !important;
-  }
-
-  .nvd3 .nv-brushBackground rect {
-    stroke: #000;
-    stroke-width: .4;
-    fill: #fff;
-    fill-opacity: .7;
-  }
-
-  .nvtooltip.with-3d-shadow, .with-3d-shadow .nvtooltip {
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
-    border-radius: 5px;
-  }
-
-  .nvd3 .nv-background {
-    fill: white;
-    fill-opacity: 0;
-  }
-
-  .nvd3 .nv-axis {
-    pointer-events:none;
-    opacity: 1;
-  }
-
-  .nvd3 .nv-axis path {
-    fill: none;
-    stroke: #000;
-    stroke-opacity: .75;
-    shape-rendering: crispEdges;
-  }
-
-  .nvd3 .nv-axis path.domain {
-    stroke-opacity: .75;
-  }
-
-  .nvd3 .nv-axis.nv-x path.domain {
-    stroke-opacity: 0;
-  }
-
-  .nvd3 .nv-axis line {
-    fill: none;
-    stroke: #e5e5e5;
-    shape-rendering: crispEdges;
-  }
-
-  .nvd3 .nv-axis .zero line,
-    /*this selector may not be necessary*/ .nvd3 .nv-axis line.zero {
-    stroke-opacity: .75;
-  }
-
-  .nvd3 .nv-axis .nv-axisMaxMin text {
-    font-weight: bold;
-  }
-
-  .nvd3 .x  .nv-axis .nv-axisMaxMin text,
-  .nvd3 .x2 .nv-axis .nv-axisMaxMin text,
-  .nvd3 .x3 .nv-axis .nv-axisMaxMin text {
-    text-anchor: middle;
-  }
-
-  .nvd3 .nv-axis.nv-disabled {
-    opacity: 0;
-  }
-
-  .rp-nvd3-line-chart, .rp-multi-bar-horizontal-chart {
-    svg text {
-      font-size: 9px;
-      fill: @dark-grey;
-      fill-opacity: .75;
-    }
-    .nv-y.nv-axis g g g.tick:first-child { visibility: hidden; }
-    .nv-x.nv-axis path.domain { stroke-opacity: .5; }
-    .nv-axis {
-      path.domain { stroke: @dark-grey; }
-      line { stroke: @grey; stroke-opacity: .5; }
-      .nv-axisMaxMin text { font-weight: normal; }
-    }
-  }
-  .rp-multi-bar-horizontal-chart {
-    .nv-bar {
-      fill: @red;
-      stroke: @red;
-      stroke-opacity: 0.75;
-      fill-opacity: 0.75;
-      rect {
-        height: 3px;
-        transform: translateY(66%);
-      }
-    }
-    .nv-axis {
-      line { visibility: hidden; }
-    }
-  }
 }
