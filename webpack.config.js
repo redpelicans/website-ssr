@@ -24,7 +24,7 @@ const webpackConfig = {
   },
   entry: {
     app: './src/client/index.js',
-    vendor: ['react-transition-group', 'preact', 'preact-compat', 'react', 'react-dom', 'react-router', 'react-router-dom', 'react-intl', 'react-headrooms', 'd3', 'react-nvd3', 'react-scroll'],
+    vendor: ['react-transition-group', 'preact', 'preact-compat', 'react', 'react-dom', 'react-router', 'react-router-dom', 'react-intl', 'react-headrooms', 'react-scroll'],
   },
   resolve: {
     alias: {

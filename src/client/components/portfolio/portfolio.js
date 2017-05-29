@@ -34,7 +34,7 @@ const Portfolio = ({ name }) => (
           <Client
             name="jeuxvideocom"
             link="http://www.jeuxvideo.com/"
-            tags={['NodeJS', 'Redis', 'RabbitMQ', 'React', 'Server-side Rendering']}
+            tags={['Node.js', 'Redis', 'RabbitMQ', 'React', 'Server-side Rendering']}
           />
         </div>
         <div className="row">
@@ -46,14 +46,14 @@ const Portfolio = ({ name }) => (
           <Client
             name="eiffage"
             link="http://www.eiffage.com"
-            tags={['NodeJS', 'React', 'ES6']}
+            tags={['Node.js', 'React', 'ES6']}
           />
         </div>
         <div className="row">
           <Client
             name="OECD"
             link="http://www.oecd.org/"
-            tags={['React', 'Redux', 'ES6', 'D3JS']}
+            tags={['React', 'Redux', 'ES6', 'D3.js']}
           />
           <Client
             name="CNES"
@@ -65,12 +65,12 @@ const Portfolio = ({ name }) => (
           <Client
             name="Rothschild"
             link="https://www.rothschildgestion.com"
-            tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
+            tags={['Node.js', 'MongoDB', 'AngularJS', 'D3.js']}
           />
           <Client
             name="Factset"
             link="http://www.factset.com/"
-            tags={['NodeJS', 'MongoDB', 'AngularJS', 'D3JS']}
+            tags={['Node.js', 'MongoDB', 'AngularJS', 'D3.js']}
           />
         </div>
         <div className="row">
@@ -82,7 +82,7 @@ const Portfolio = ({ name }) => (
           <Client
             name="Platform5"
             link="http://www.platform5.ch"
-            tags={['NodeJS', 'MongoDB', 'Google Map API']}
+            tags={['Node.js', 'MongoDB', 'Google Map API']}
           />
         </div>
       </div>

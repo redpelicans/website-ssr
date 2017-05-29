@@ -20,8 +20,8 @@ const Javascript2 = () => (
                 <span className="glyphicon glyphicon-dashboard"></span>
               </div>
               <div className="body">
-                <h3><FormattedHTMLMessage id="technologies.javascript2.content.h2" /></h3>
-                <p><FormattedHTMLMessage id="technologies.javascript2.content.p2" /></p>
+                <h3><FormattedHTMLMessage id="technologies.javascript2.content.h1" /></h3>
+                <p><FormattedHTMLMessage id="technologies.javascript2.content.p1" /></p>
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
