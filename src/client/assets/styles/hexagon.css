@@ -1,0 +1,106 @@
+/* from http://brenna.github.io/csshexagon/ */
+/* transparent as default color */
+
+.hexagon {
+  position: relative;
+  width: 230px; 
+  height: 132.79px;
+  background-color: transparent;
+  margin: 66.40px 0;
+  border-left: solid 4px transparent;
+  border-right: solid 4px transparent;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 162.63px;
+  height: 162.63px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 29.6827px;
+}
+
+.hexagon:before {
+  top: -81.3173px;
+  border-top: solid 5.6569px transparent;
+  border-right: solid 5.6569px transparent;
+}
+
+.hexagon:after {
+  bottom: -81.3173px;
+  border-bottom: solid 5.6569px transparent;
+  border-left: solid 5.6569px transparent;
+}
+
+/* custom */
+.no-padding {
+  padding: 0;
+}
+
+.hexagon .hexin {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.hexrow {
+  margin-top: -57px;
+}
+
+/** big heaxgon */
+.big.hexagon {
+  position: relative;
+  width: 300px; 
+  height: 173.21px;
+  background-color: transparent;
+  margin: 86.60px 0;
+  border-left: solid 4px transparent;
+  border-right: solid 4px transparent;
+}
+
+.big.hexagon:before,
+.big.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 212.13px;
+  height: 212.13px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 39.9340px;
+}
+
+.big.hexagon:before {
+  top: -106.0660px;
+  border-top: solid 5.6569px transparent;
+  border-right: solid 5.6569px transparent;
+}
+
+.big.hexagon:after {
+  bottom: -106.0660px;
+  border-bottom: solid 5.6569px transparent;
+  border-left: solid 5.6569px transparent;
+}
+
+.big.hexagon .hexin {
+  top: -47px;
+}
+
+.big.hexrow {
+  margin-top: -77px;
+}
+
+.smallcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

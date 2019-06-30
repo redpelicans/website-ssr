@@ -1,6 +1,6 @@
 @import './images';
 
-.hex {
+.hexagon {
   a {
     border-bottom: 1px dotted;
     text-decoration: none;
@@ -9,8 +9,12 @@
     }
   }
   &.full-red {
-    background: @hex-border-dark-red-bg-red center center no-repeat;
-    background-size: cover;
+    background-color: @red;
+    border-color: @dark-red;
+    &:before, &:after {
+      border-color: @dark-red;
+    }
+
     color: @grey;
     a {
       color: @grey;
@@ -18,8 +22,12 @@
     }
   }
   &.partial-red {
-    background: @hex-border-dark-red center center no-repeat;
-    background-size: cover;
+    background-color: none;
+    border-color: @dark-red;
+    &:before, &:after {
+      border-color: @dark-red;
+    }
+
     color: @dark-red;
     a {
       color: @dark-red;
@@ -27,8 +35,11 @@
     }
   }
   &.full-dark-grey {
-    background: @hex-border-darker-grey-bg-dark-grey center center no-repeat;
-    background-size: cover;
+    background-color: @dark-grey;
+    border-color: @darker-grey;
+    &:before, &:after {
+      border-color: @darker-grey;
+    }
     color: @grey;
     a {
       color: @grey;
@@ -36,8 +47,11 @@
     }
   }
   &.partial-dark-grey {
-    background: @hex-border-darker-grey center center no-repeat;
-    background-size: cover;
+    background-color: none;
+    border-color: @darker-grey;
+    &:before, &:after {
+      border-color: @darker-grey;
+    }
     color: @dark-grey;
     a {
       color: @dark-grey;
